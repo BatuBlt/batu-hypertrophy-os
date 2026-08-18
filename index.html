@@ -174,7 +174,11 @@ button{touch-action:manipulation}
   .command-actions button{min-height:42px;padding:8px 5px;font-size:10px}
   .today-panel,.today-main{grid-template-columns:1fr!important}
   .daily-actions,.today-checks{grid-template-columns:1fr!important}
-  .workouts,.exgrid,.exercise-grid{grid-template-columns:1fr!important}
+  .workouts,.exgrid,.clean-exercise{min-height:0!important;padding:18px 50px 18px 18px!important;}
+.clean-exercise h3{font-size:19px!important;line-height:1.22!important;}
+.clean-exercise p{font-size:13px!important;line-height:1.5!important;}
+.clean-exercise .meta{font-size:11px!important;}
+.exercise-grid{grid-template-columns:1fr!important}
   .exercise{min-width:0}
   .exercise-main{min-width:0}
   .exercise-log{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -268,9 +272,36 @@ button{touch-action:manipulation}
 .sleep-form label small{margin:0;display:block;opacity:.7}
 .sleep-form input,.sleep-form select{width:100%;min-height:42px;box-sizing:border-box}
 .surprise-recipe-global{margin-right:8px}
+
+.overload-record-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-top:10px;padding:9px 14px;border:1px solid #ff7a00;border-radius:8px;background:linear-gradient(180deg,#ff861f,#ff6a00);color:#111;font-size:11px;font-weight:900;letter-spacing:.15px;cursor:pointer;box-shadow:0 4px 14px rgba(255,106,0,.18);transition:transform .15s ease,box-shadow .15s ease,filter .15s ease;}
+.overload-record-btn:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 6px 18px rgba(255,106,0,.28);}
+.overload-record-btn:active{transform:translateY(0);box-shadow:0 2px 8px rgba(255,106,0,.18);}
+.record-target{outline:2px solid #ff7a00!important;outline-offset:3px;transition:outline-color .2s ease;}
+
+.exercise-record-editor{margin-top:14px;padding:14px;border:1px solid #3a2b20;border-radius:10px;background:#101313;box-shadow:0 8px 24px rgba(0,0,0,.22);}
+.record-editor-title{font-size:13px;font-weight:900;color:#ff8a00;margin-bottom:12px;}
+.record-editor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
+.record-editor-grid label{display:flex;flex-direction:column;gap:5px;color:#aeb4b2;font-size:10px;font-weight:800;}
+.record-editor-grid input{width:100%;min-height:38px;padding:8px 10px;border:1px solid #303738;border-radius:7px;background:#080b0b;color:#f3f4f1;outline:none;}
+.record-editor-grid input:focus{border-color:#ff7a00;box-shadow:0 0 0 2px rgba(255,122,0,.12);}
+.record-editor-actions{display:flex;gap:8px;margin-top:12px;}
+.record-save-btn,.record-cancel-btn{border-radius:8px;padding:9px 13px;font-size:11px;font-weight:900;cursor:pointer;}
+.record-save-btn{border:1px solid #ff7a00;background:#ff7a00;color:#111;}
+.record-save-btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
+.record-cancel-btn{border:1px solid #303738;background:#171b1b;color:#bbb;}
+.record-cancel-btn:hover{border-color:#555;color:#fff;}
 </style><style>
 :root{--accent:#ff7a00!important;--accent2:#ff9b3d!important}
-.clean-exercise{position:relative;min-height:142px!important;padding:20px 54px 20px 20px!important;background:linear-gradient(135deg,#1b1c1e,#111214)!important;border:1px solid #373737!important;border-radius:9px!important}.clean-exercise:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#ff7a00}.exercise-label{font-size:9px;letter-spacing:.15em;color:#777;font-weight:900;margin-bottom:5px}.clean-exercise h3{font-size:21px;color:#f1f1f1}.clean-exercise .sets{color:#ff8a00;font-weight:900}.clean-exercise p{color:#c7c7c7}.exercise-done{position:absolute;right:15px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:1px solid #444;background:#111;color:#777;font-weight:900}.exercise-done:hover,.exercise-done.done{border-color:#ff7a00;color:#ff7a00}
+.clean-exercise{position:relative;min-height:142px!important;padding:20px 54px 20px 20px!important;background:linear-gradient(135deg,#1b1c1e,#111214)!important;border:1px solid #373737!important;border-radius:9px!important}
+.clean-exercise{box-sizing:border-box;overflow:hidden;word-break:normal;overflow-wrap:anywhere;}
+.clean-exercise .exercise-main{min-width:0;max-width:100%;}
+.clean-exercise h3{margin:0 0 8px!important;line-height:1.2!important;overflow-wrap:anywhere;word-break:normal;}
+.clean-exercise .sets{display:block;margin:4px 0 10px;line-height:1.25;}
+.clean-exercise .meta{display:flex;flex-wrap:wrap;gap:6px 10px;margin:0 0 9px;line-height:1.35;}
+.clean-exercise .meta span{display:inline-block;max-width:100%;white-space:normal;overflow-wrap:anywhere;}
+.clean-exercise p{margin:7px 0!important;line-height:1.5!important;overflow-wrap:anywhere;}
+.clean-exercise .tip{margin-top:9px!important;}
+.clean-exercise:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#ff7a00}.exercise-label{font-size:9px;letter-spacing:.15em;color:#777;font-weight:900;margin-bottom:5px}.clean-exercise h3{font-size:21px;color:#f1f1f1}.clean-exercise .sets{color:#ff8a00;font-weight:900}.clean-exercise p{color:#c7c7c7}.exercise-done{position:absolute;right:15px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:1px solid #444;background:#111;color:#777;font-weight:900}.exercise-done:hover,.exercise-done.done{border-color:#ff7a00;color:#ff7a00}
 .recipe-save{margin-top:10px;border:1px solid #383838;background:#111;color:#aaa;border-radius:7px;padding:8px;font-size:10px;font-weight:900}.recipe-save.selected{border-color:#ff7a00;background:#1d140d;color:#ff8a00}
 .command-center{margin:14px 0;background:#111;border:1px solid #3b3b3b;border-radius:9px;padding:14px 16px;display:flex;justify-content:space-between;gap:15px;align-items:center}.command-center strong{display:block;color:#eee;font-size:14px;margin-top:3px}.command-actions{display:flex;gap:7px;flex-wrap:wrap}.command-actions button{border:1px solid #3b3b3b;background:#191919;color:#ddd;border-radius:7px;padding:8px 11px;font-size:10px;font-weight:800}.command-actions button:hover{border-color:#ff7a00;color:#ff7a00}.timer-dock{position:fixed;right:20px;bottom:20px;z-index:100;display:none;align-items:center;gap:8px;background:#111;border:1px solid #444;border-radius:9px;padding:10px 13px}.timer-dock.show{display:flex}.timer-dock strong{font-size:24px;color:#ff7a00}
 </style>
@@ -416,7 +447,7 @@ main>section.page{display:none!important}main>section.page.active{display:block!
 .language-switcher{position:fixed;top:14px;right:18px;z-index:99999;display:flex;gap:3px;background:#111;border:1px solid #333;border-radius:8px;padding:3px;box-shadow:0 8px 25px rgba(0,0,0,.35)}
 .lang-btn{border:0;background:transparent;color:#777;padding:7px 9px;border-radius:6px;font-size:10px;font-weight:900;cursor:pointer}.lang-btn:hover{color:#eee}.lang-btn.active{background:#ff7a00;color:#111}
 @media(max-width:700px){.language-switcher{top:8px;right:8px}.lang-btn{padding:6px 8px}}
-</style><meta content="#ff6a00" name="theme-color"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><meta content="BATU OS" name="apple-mobile-web-app-title"/><link href="manifest.webmanifest" rel="manifest"/><link href="icons/batu-icon-v62-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="icons/batu-icon-v62-192.png" rel="icon" sizes="192x192" type="image/png"/><style>.sleep-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.sleep-grid.three{grid-template-columns:repeat(3,1fr);margin:14px 0}.sleep-form{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.sleep-form label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:800}.sleep-form input,.sleep-form select{background:#090d0e;color:#fff;border:1px solid #333;border-radius:7px;padding:11px;font:inherit}.sleep-form small{color:#888}.sleep-history{display:grid;gap:8px}.sleep-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;background:#111718;border:1px solid #2c3334;border-radius:7px;padding:12px}.sleep-row b{color:var(--orange)}.muted{color:#8e9695;font-size:12px}@media(max-width:800px){.sleep-grid,.sleep-grid.three,.sleep-form{grid-template-columns:1fr}.sleep-row{grid-template-columns:1fr 1fr}}</style></head><body><div class="language-switcher" id="languageSwitcher">
+</style><meta content="#ff6a00" name="theme-color"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><meta content="BATU OS" name="apple-mobile-web-app-title"/><link href="manifest.webmanifest" rel="manifest"/><link href="icons/icon-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="icons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/><style>.sleep-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.sleep-grid.three{grid-template-columns:repeat(3,1fr);margin:14px 0}.sleep-form{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.sleep-form label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:800}.sleep-form input,.sleep-form select{background:#090d0e;color:#fff;border:1px solid #333;border-radius:7px;padding:11px;font:inherit}.sleep-form small{color:#888}.sleep-history{display:grid;gap:8px}.sleep-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;background:#111718;border:1px solid #2c3334;border-radius:7px;padding:12px}.sleep-row b{color:var(--orange)}.muted{color:#8e9695;font-size:12px}@media(max-width:800px){.sleep-grid,.sleep-grid.three,.sleep-form{grid-template-columns:1fr}.sleep-row{grid-template-columns:1fr 1fr}}</style></head><body><div class="language-switcher" id="languageSwitcher">
 <button class="lang-btn" data-lang="tr" onclick="window.setLanguage('tr'); return false;" ontouchend="window.setLanguage('tr'); return false;" type="button">TR</button>
 <button class="lang-btn" data-lang="en" onclick="window.setLanguage('en'); return false;" ontouchend="window.setLanguage('en'); return false;" type="button">EN</button>
 <button class="lang-btn" data-lang="pl" onclick="window.setLanguage('pl'); return false;" ontouchend="window.setLanguage('pl'); return false;" type="button">PL</button>
@@ -504,56 +535,40 @@ main>section.page{display:none!important}main>section.page.active{display:block!
 <div><small>ODAK</small><strong>KAS KAZANIMI</strong></div>
 </div>
 </section><section class="page" id="training">
-<div class="section-head"><div><div class="kicker">Antrenman</div><h2>A / B — Makinesiz bacak sistemi</h2><div class="note blue" style="margin-top:10px"><b>Odak:</b> Hareket adı + set/tekrar + hedef kas. Görsel karmaşası yok; programı hızlı okuyup uygulayacaksın.</div><p>Bacak makinesi yok. Gereksiz alternatiflerle programı şişirmek yerine mevcut ekipmanına uygun hareketleri kullanıyoruz.</p></div></div>
-<h2 style="margin-top:18px">A Günü</h2>
+<div class="section-head"><div><div class="kicker">Antrenman</div><h2>A / B — Push + Pull + minimum bacak</h2><div class="note blue workout-focus" style="margin-top:10px"><b data-i18n-focus-label>Odak:</b> <span data-i18n-focus-text>Daha az gereksiz hareket, daha net progresyon. A → B → Dinlen döngüsünü koruyoruz.</span></div><p>Program, mevcut ekipmanına ve hedefin olan üst vücut/V-taper gelişimine göre düzenlendi. Bacaklar tamamen atlanmıyor ama programın odağı da değil.</p></div></div>
+<h2 style="margin-top:18px">A Günü — Göğüs + Omuz + Triceps + Karın</h2>
 <div class="exercise-grid">
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Incline Dumbbell Press</h3><div class="sets">3 × 6–10</div><div class="meta"><span>Üst göğüs</span><span>12.5 kg ref.</span></div><p>Bench yaklaşık 30°. Omuzları geride tut, ağırlığı kontrollü indir.</p><p class="tip">İlerleme: 10/10/10 olduğunda küçük ağırlık artışı.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Lat Pulldown</h3><div class="sets">3 × 6–10</div><div class="meta"><span>Kanat</span><span>40 kg ref.</span></div><p>Barı üst göğse çek. Gövdeyi geriye savurup tekrar çalma.</p><p class="tip">Dirsekleri aşağı ve arkaya sür.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Bulgarian Split Squat</h3><div class="sets">3 × 8–12 / leg</div><div class="meta"><span>Ön bacak</span><span>Kalça</span></div><p>Arka ayağı bench'e koy. Ön bacakla kontrollü inip çık.</p><p class="tip">Denge bozuluyorsa yükü azalt. Bu hareket ego kaldırışı değil.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Seated Cable Row</h3><div class="sets">3 × 8–12</div><div class="meta"><span>Orta sırt</span><span>Çift kol</span></div><p>Artık single-arm row yok. İki elle çek; göğüs sabit, dirsekler kontrollü.</p><p class="tip">Hedef: aynı kiloda daha fazla temiz tekrar.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Cable Lateral Raise</h3><div class="sets">3 × 12–20</div><div class="meta"><span>Yan omuz</span><span>Hafif yük</span></div><p>Yan omuz için hafif yük ve sabit gövde. Sallama yok.</p><p class="tip">V-taper için bu hareketi ciddiye al.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Triceps Pushdown</h3><div class="sets">2 × 8–12</div><div class="meta"><span>Arka kol</span><span>35–40 kg ref.</span></div><p>Dirsekleri gövdeye yakın tut. Alt pozisyonda kontrollü sık.</p><p class="tip">Ağırlık arttığında formun değişiyorsa artış erken.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Incline Dumbbell Curl</h3><div class="sets">2 × 8–12</div><div class="meta"><span>Ön kol</span><span>RIR 1–2</span></div><p>Bench üzerinde kolu geriye bırak, savurmadan curl yap.</p><p class="tip">Eksantrik kısmı kontrollü.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Cable Crunch</h3><div class="sets">3 × 10–15</div><div class="meta"><span>Karın</span><span>40–45 kg ref.</span></div><p>Hareketi karından başlat. Kalçayı ileri geri sallama.</p><p class="tip">Tam ROM, kontrollü tekrar.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Incline Dumbbell Press</h3><div class="sets">3 × 6–10</div><div class="meta"><span>Üst göğüs</span><span>12.5 kg ref.</span></div><p>Bench yaklaşık 30°. Omuzları geride tut ve ağırlığı kontrollü indir.</p><p class="tip">10/10/10'a ulaştığında ağırlığı artır.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Cable Pec Deck / Cable Chest Fly</h3><div class="sets">3 × 10–15</div><div class="meta"><span>Göğüs izolasyonu</span><span>Kontrollü tempo</span></div><p>Göğüsü sıkıştır, omuzları öne düşürme ve dönüşü kontrollü yap.</p><p class="tip">Amaç ağırlık göstermek değil, göğüste gerilim oluşturmak.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Up-to-Low Cable Crossover</h3><div class="sets">2 × 10–15</div><div class="meta"><span>Göğüs</span><span>Yukarıdan aşağı</span></div><p>Kabloları yukarıdan başlatıp aşağı ve içeri getir. Gövdeyi sabit tut.</p><p class="tip">Hareket boyunca göğüs gerilimini koru.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Cable Lateral Raise</h3><div class="sets">3 × 12–20</div><div class="meta"><span>Yan omuz</span><span>Hafif yük</span></div><p>Gövdeyi sabit tut ve kolu kontrollü yana aç. Sallanma yok.</p><p class="tip">V-taper için bu hareketi ciddiye al.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Cable Rear Delt Fly</h3><div class="sets">2 × 12–20</div><div class="meta"><span>Arka omuz</span><span>Hafif yük</span></div><p>Gövdeyi sabit tut ve kolları kontrollü aç. Hareketi arka omuzla yönet.</p><p class="tip">Kablo sürekli gerilim verdiği için ağır kilo şart değil.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Triceps Pushdown</h3><div class="sets">3 × 8–12</div><div class="meta"><span>Arka kol</span><span>35–40 kg ref.</span></div><p>Dirsekleri gövdeye yakın tut ve alt pozisyonda kontrollü sık.</p><p class="tip">Form bozuluyorsa ağırlık artışı erken.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Overhead Cable Triceps Extension</h3><div class="sets">2 × 10–15</div><div class="meta"><span>Triceps</span><span>Uzun baş</span></div><p>Dirsekleri mümkün olduğunca sabit tut ve aşağıda kontrollü esneme al.</p><p class="tip">Önce ROM'u ve formu düzelt, sonra ağırlığı artır.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Cable Crunch</h3><div class="sets">3 × 10–15</div><div class="meta"><span>Karın</span><span>40–45 kg ref.</span></div><p>Hareketi karın kaslarınla başlat. Kalçayı sallama ve gövdeyi kontrol et.</p><p class="tip">Tam ROM kullan; tekrarları kontrollü yap ve ağırlığı form bozulmadan artır.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
 </div>
-<h2 style="margin-top:26px">B Günü</h2>
+
+<h2 style="margin-top:26px">B Günü — Sırt + Biceps + Minimum Bacak + Ön Kol</h2>
 <div class="exercise-grid">
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Dumbbell Romanian Deadlift</h3><div class="sets">3 × 6–10</div><div class="meta"><span>Arka bacak</span><span>Kalça</span></div><p>Kalçayı geriye gönder; dumbbell'lar bacaklara yakın kalsın.</p><p class="tip">Bel pozisyonu bozuluyorsa set biter.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Goblet Squat</h3><div class="sets">3 × 8–15</div><div class="meta"><span>Ön bacak</span><span>Kalça</span></div><p>Dumbbell göğüste. Kontrollü derinlik, dik ve stabil gövde.</p><p class="tip">Önce tekrarları artır, sonra yükü.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Cable Pec Deck / Cable Chest Fly</h3><div class="sets">3 × 10–15</div><div class="meta"><span>Göğüs izolasyonu</span><span>Senin hareketin</span></div><p>Göğüsü sıkıştır, omuzları öne düşürme. Kontrollü açıl.</p><p class="tip">Burada kilo gösterisi yerine göğüs gerilimi istiyoruz.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Wide-Grip Cable Row</h3><div class="sets">3 × 8–12</div><div class="meta"><span>Üst sırt</span><span>Sırt kalınlığı</span></div><p>Geniş tutuşla dirsekleri biraz dışarıda çek.</p><p class="tip">Seated Cable Row ailesi; tek kol yok.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Cable Rear Delt Fly</h3><div class="sets">2 × 12–20</div><div class="meta"><span>Arka omuz</span><span>Hafif yük</span></div><p>Arka omuzları aç. Gövdeyi sabit tut ve hareketi küçük kasla kontrol et.</p><p class="tip">Kablo sürekli gerilim verdiği için hafif yük yeterli.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Standing Cable Leg Curl</h3><div class="sets">2 × 10–15 / leg</div><div class="meta"><span>Arka bacak</span><span>Ayak bileği kayışı</span></div><p>Alt kabloya ankle strap tak. Kalçayı sabit tutup topuğu kalçaya çek.</p><p class="tip">Makine leg curl olmadığı için bu pratik alternatif.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Single-Leg Calf Raise</h3><div class="sets">3 × 10–20 / leg</div><div class="meta"><span>Baldır</span><span>Tam hareket açıklığı</span></div><p>Topuğu aşağı kontrollü indir, yukarı güçlü çık.</p><p class="tip">Tam esneme + üstte sıkıştırma.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Overhead Cable Triceps Extension</h3><div class="sets">2 × 10–15</div><div class="meta"><span>Arka kol</span><span>Uzun baş</span></div><p>Dirsekleri sabit tut; aşağıda kontrollü esneme al.</p><p class="tip">Ağırlaştırmadan önce ROM'u düzelt.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
-<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>African Curl</h3><div class="sets">2 × 8–12</div><div class="meta"><span>Ön kol</span><span>RIR 1–2</span></div><p>Senin kullandığın curl varyasyonu. Dirsekleri mümkün olduğunca sabit tut ve ağırlığı kontrollü kaldır.</p><p class="tip">Burada amaç hareketi sallamak değil, temiz tekrar + progresif yük.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Lat Pulldown</h3><div class="sets">3 × 6–10</div><div class="meta"><span>Lat / sırt genişliği</span><span>40 kg ref.</span></div><p>Barı üst göğse doğru çek. Gövdeyi geriye savurup tekrar çalma.</p><p class="tip">Dirsekleri aşağı ve arkaya sür.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Seated Cable Row</h3><div class="sets">3 × 8–12</div><div class="meta"><span>Orta sırt</span><span>Geniş / dar dönüşümlü</span></div><p>Göğsü sabit tut ve dirsekleri kontrollü geriye çek. Tek kol versiyonu yok.</p><p class="tip">B1 geniş tutuş, B2 dar/neutral tutuş şeklinde dönüşümlü kullan.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Straight-Arm Pulldown</h3><div class="sets">3 × 10–15</div><div class="meta"><span>Lat</span><span>Düşük biceps katkısı</span></div><p>Kolları büyük ölçüde düz tutarak barı kalçaya doğru indir. Gövdeyi sabit tut.</p><p class="tip">Amaç latları izole etmek; ağırlığı sallayarak çekme.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Incline Dumbbell Curl</h3><div class="sets">3 × 8–12</div><div class="meta"><span>Biceps</span><span>RIR 1–2</span></div><p>Bench üzerinde kolları geride bırak ve ağırlığı savurmadan kaldır.</p><p class="tip">Eksantrik kısmı kontrollü tut.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Preacher Curl</h3><div class="sets">2 × 10–15</div><div class="meta"><span>Biceps</span><span>Kontrollü tekrar</span></div><p>Dirsekleri ped üzerinde sabit tut ve ağırlığı tam kontrolle indirip kaldır.</p><p class="tip">Alt pozisyonda eklemi kilitlemeden kontrollü esneme al.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Bulgarian Split Squat</h3><div class="sets">2 × 8–12 / leg</div><div class="meta"><span>Ön bacak</span><span>Kalça</span></div><p>Arka ayağı bench'e koy. Ön bacakla kontrollü inip çık.</p><p class="tip">Bacak önceliği değil; temiz teknik ve minimum etkili hacim yeterli.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Dumbbell Romanian Deadlift</h3><div class="sets">2 × 8–12</div><div class="meta"><span>Arka bacak</span><span>Kalça</span></div><p>Kalçayı geriye gönder; dumbbell'ları bacaklara yakın tut ve sırt pozisyonunu koru.</p><p class="tip">Bel pozisyonu bozuluyorsa seti bitir.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
+<article class="exercise clean-exercise"><div class="exercise-main"><div class="exercise-label">HAREKET</div><h3>Forearm Curl</h3><div class="sets">2 × 10–15</div><div class="meta"><span>Ön kol</span><span>Kontrollü tempo</span></div><p>Bilekleri kontrollü hareket ettir. Ağırlığı savurmadan tam hareket aralığında çalış.</p><p class="tip">Ön kolu hissederek çalış; ağırlığı form bozulmadan artır.</p></div><button class="exercise-done" onclick="markExercise(this)">✓</button></article>
 </div>
-<div class="card" style="margin-top:16px"><h2>İsteğe bağlı ek hareketler — yalnızca toparlanman iyiyse</h2><p class="dki">Ana programı gereksiz uzatmak için değil. Enerjin ve toparlanman iyiyse haftada 1–2 kez aşağıdakilerden yalnızca birini ekleyebilirsin.</p><div class="grid g3">
-<div><h3>Dumbbell Pullover</h3><p class="dki">2 × 10–15 • lats + chest</p></div>
-<div><h3>Reverse Lunge</h3><p class="dki">2 × 10–12 / leg • quads + glutes</p></div>
-<div><h3>Hammer Curl</h3><p class="dki">2 × 10–15 • biceps + brachialis</p></div>
-</div></div>
-<div class="card" style="margin-top:16px"><h2>12 haftalık plan</h2><div class="grid g4">
-<div><span class="badge">W1–4</span><h3>Temel</h3><p class="dki">RIR 2–3. Form + tekrar standardı.</p></div>
-<div><span class="badge">W5–8</span><h3>Yüklenme</h3><p class="dki">RIR 1–2. Üst tekrar sınırında ağırlık artır.</p></div>
-<div><span class="badge">W9</span><h3>Deload</h3><p class="dki">Setleri yaklaşık yarıya indir.</p></div>
-<div><span class="badge">W10–12</span><h3>Performans</h3><p class="dki">RIR 1–2, izolasyon son setleri gerektiğinde RIR 0–1.</p></div>
-</div></div>
+<div class="card" style="margin-top:16px"><h2>A → B → Dinlen</h2><p class="dki">Döngüyü sabit tut. Yeni split'e geçmek yerine aynı hareketlerde tekrar ve ağırlık progresyonunu takip et.</p><div class="grid g3"><div><span class="badge">A</span><h3>Göğüs + Omuz + Triceps + Karın</h3><p class="dki">8 hareket</p></div><div><span class="badge">B</span><h3>Sırt + Biceps + Minimum Bacak + Ön Kol</h3><p class="dki">8 hareket</p></div><div><span class="badge">REST</span><h3>Toparlanma</h3><p class="dki">A → B → Dinlen → tekrar</p></div></div></div>
+<div class="card" style="margin-top:16px"><h2>Progresyon</h2><p class="dki">Çoğu sette RIR 1–2 bırak. Tekrar aralığının üst sınırına tüm setlerde ulaştığında ağırlığı artır. Örneğin 10/10/10 tamamlandığında bir sonraki ağırlığa geç.</p></div>
 <div class="overload-panel panel">
 <div class="panel-head"><div><div class="kicker">BİR SONRAKİ HEDEF</div><h2>İlerlemeli Yüklenme</h2><p>Son kayıtlarına göre bir sonraki antrenmanda neyi hedeflemen gerektiğini gösterir.</p></div></div>
 <div class="overload-list" id="overloadList"></div>
-</div><div class="training-log-panel">
-<div class="section-title-row compact"><div><div class="kicker">PROGRESSIVE OVERLOAD</div><h2>ANTRENMAN LOGU</h2><p>Her sette ağırlık ve tekrarını kaydet. Sonraki hedef otomatik oluşsun.</p></div><div class="score-box"><b id="workoutProgress">0%</b><span>bugün</span></div></div>
-<div class="exercise-log" id="exerciseLog"></div>
-<div class="log-summary"><span id="logSummary">0 / 0 set tamamlandı</span><button class="primary-btn" onclick="finishWorkout()">Antrenmanı tamamla</button></div>
-<div class="training-history panel">
-<div class="panel-head"><div><div class="kicker">GEÇMİŞ</div><h2>Son kayıtlar</h2><p>Hareket bazında son performansını gör.</p></div></div>
-<div id="trainingHistory"></div>
 </div>
-<div class="pr-panel panel">
-<div class="panel-head"><div><div class="kicker">REKORLAR</div><h2>PR Merkezi</h2><p>En iyi ağırlık ve tekrar kombinasyonlarını saklar.</p></div></div>
-<div class="pr-list" id="prList"></div>
-</div></div></section><section class="page" id="meals">
+<div class="training-log-panel">
+<div style="text-align:center;color:#777;font-size:11px;padding:10px">BATU // HYPERTROPHY OS • Disiplin • İstikrar • Gelişim</div>
+<div class="timer-dock" id="timerDock"><span>SET ARASI</span><strong id="timerValue">75</strong><small>sn</small><button onclick="stopTimer()">Durdur</button></div>
+</section><section class="page" id="meals">
 <div class="section-title-row">
 <div><div class="kicker">2800 KCAL HEDEF</div><h1>7 GÜNLÜK BESLENME</h1><p>Basit ürünler, yüksek protein, yeterli karbonhidrat. Bulgur yok.</p></div>
 <div class="macro-goal"><b>2800</b><span>kcal / gün</span><b>130–140 g</b><span>protein</span></div>
@@ -2123,12 +2138,22 @@ document.addEventListener("DOMContentLoaded",function(){
 
   // ---- Workout log ----
   const exercises=[
-    ["Cable Peck Deck",3],["Incline Dumbbell Press",3],["Lower Chest Cable Crossover",3],
-    ["Triceps Pushdown",3],["Overhead Triceps Extension",3],["Cable Crunch",3],
-    ["Lat Pulldown",3],["Seated Cable Row",3],["Straight Arm Pulldown",3],
-    ["Barbell Row",3],["Incline Dumbbell Curl",3],["African Curl",3],
-    ["Shoulder Press",3],["Lateral Raise",3],["Dumbbell Romanian Deadlift",3],
-    ["Leg Extension Alternative",3]
+    ["Incline Dumbbell Press",3],
+    ["Cable Pec Deck / Cable Chest Fly",3],
+    ["Up-to-Low Cable Crossover",2],
+    ["Cable Lateral Raise",3],
+    ["Cable Rear Delt Fly",2],
+    ["Triceps Pushdown",3],
+    ["Overhead Cable Triceps Extension",2],
+    ["Cable Crunch",3],
+    ["Lat Pulldown",3],
+    ["Seated Cable Row",3],
+    ["Straight-Arm Pulldown",3],
+    ["Incline Dumbbell Curl",3],
+    ["Preacher Curl",2],
+    ["Bulgarian Split Squat",2],
+    ["Dumbbell Romanian Deadlift",2],
+    ["Forearm Curl",2]
   ];
   function renderLog(){
     const wrap=document.getElementById("exerciseLog"); if(!wrap)return;
@@ -2714,15 +2739,114 @@ document.addEventListener("DOMContentLoaded",function(){
     const arr=Object.entries(prs);
     box.innerHTML=arr.length?arr.map(([name,p])=>`<div class="pr-item"><span>${name}</span><b>${p.kg} kg × ${p.reps}</b><small>En iyi kombinasyon • ${p.date}</small></div>`).join(""):'<div class="history-empty">Henüz PR kaydı yok.</div>';
   };
+  window.startExerciseRecord=function(name){
+    const training=document.getElementById("training");
+    if(training && !training.classList.contains("active") && window.showPage) window.showPage("training");
+
+    setTimeout(()=>{
+      const exercises=[...document.querySelectorAll("#training .exercise")];
+      const card=exercises.find(c=>c.querySelector("h3")?.textContent.trim()===name);
+      if(!card){
+        console.error("Exercise not found:",name);
+        return;
+      }
+
+      document.querySelectorAll(".exercise-record-editor").forEach(x=>x.remove());
+
+      const lang=(typeof langState!=="undefined" && langState.current) ? langState.current : (window.getLanguage ? window.getLanguage() : (localStorage.getItem("batuLanguage")||"tr"));
+      const t=lang==="en"
+        ? {title:"Create first record",kg:"Weight (kg)",reps:"Reps",save:"Save record",cancel:"Cancel",saved:"Record saved."}
+        : lang==="pl"
+        ? {title:"Utwórz pierwszy zapis",kg:"Ciężar (kg)",reps:"Powtórzenia",save:"Zapisz",cancel:"Anuluj",saved:"Zapis zapisany."}
+        : {title:"İlk kaydı oluştur",kg:"Ağırlık (kg)",reps:"Tekrar",save:"Kaydı kaydet",cancel:"İptal",saved:"Kayıt kaydedildi."};
+
+      const setsText=card.querySelector(".sets")?.textContent || "3 × 8–12";
+      const setCount=Math.max(1,Math.min(6,Number((setsText.match(/^\s*(\d+)/)||["3","3"])[1])));
+
+      const editor=document.createElement("div");
+      editor.className="exercise-record-editor";
+      editor.innerHTML=`
+        <div class="record-editor-title">${t.title}</div>
+        <div class="record-editor-grid">
+          ${Array.from({length:setCount},(_,i)=>`
+            <label>
+              <span>S${i+1}</span>
+              <input class="record-kg" type="number" min="0" step="0.5" inputmode="decimal" placeholder="${t.kg}">
+            </label>
+            <label>
+              <span>${t.reps}</span>
+              <input class="record-reps" type="number" min="1" step="1" inputmode="numeric" placeholder="${t.reps}">
+            </label>
+          `).join("")}
+        </div>
+        <div class="record-editor-actions">
+          <button type="button" class="record-save-btn">${t.save}</button>
+          <button type="button" class="record-cancel-btn">${t.cancel}</button>
+        </div>
+      `;
+      card.appendChild(editor);
+
+      editor.querySelector(".record-cancel-btn").addEventListener("click",()=>editor.remove());
+
+      editor.querySelector(".record-save-btn").addEventListener("click",()=>{
+        const rows=[...editor.querySelectorAll(".record-kg")].map((kgInput,i)=>{
+          const repsInput=editor.querySelectorAll(".record-reps")[i];
+          return {kg:kgInput.value,reps:repsInput.value};
+        }).filter(x=>Number(x.kg)>0 && Number(x.reps)>0);
+
+        if(!rows.length){
+          editor.querySelector(".record-editor-title").textContent =
+            lang==="en" ? "Enter at least one weight and rep value."
+            : lang==="pl" ? "Wpisz co najmniej ciężar i liczbę powtórzeń."
+            : "En az bir ağırlık ve tekrar gir.";
+          return;
+        }
+
+        const sessions=JSON.parse(localStorage.getItem("batuWorkoutSessions")||"[]");
+        const date=new Date().toLocaleDateString("tr-TR");
+        sessions.push({
+          date,
+          rows:[{title:name,vals:rows.map(x=>({kg:Number(x.kg),reps:Number(x.reps)}))}]
+        });
+        localStorage.setItem("batuWorkoutSessions",JSON.stringify(sessions));
+
+        if(typeof window.updatePRs==="function") window.updatePRs();
+        if(typeof window.renderOverload==="function") window.renderOverload();
+
+        editor.querySelector(".record-editor-title").textContent=t.saved;
+        setTimeout(()=>editor.remove(),700);
+      });
+
+      card.scrollIntoView({behavior:"smooth",block:"center"});
+      card.classList.add("record-target");
+      setTimeout(()=>card.classList.remove("record-target"),1800);
+
+      setTimeout(()=>{
+        const first=editor.querySelector(".record-kg");
+        if(first) first.focus();
+      },400);
+    },150);
+  };
+
   window.renderOverload=function(){
     const box=document.getElementById("overloadList");if(!box)return;
     const prs=JSON.parse(localStorage.getItem("batuPRs")||"{}");
-    const names=["Cable Peck Deck","Incline Dumbbell Press","Lower Chest Cable Crossover","Triceps Pushdown","Overhead Triceps Extension","Lat Pulldown","Seated Cable Row","Straight Arm Pulldown","Barbell Row","Incline Dumbbell Curl","African Curl","Shoulder Press","Lateral Raise","Dumbbell Romanian Deadlift"];
+    const lang=(typeof langState!=="undefined" && langState.current) ? langState.current : (window.getLanguage ? window.getLanguage() : (localStorage.getItem("batuLanguage")||"tr"));
+    const ui=lang==="en"
+      ? {history:"No history yet",create:"Create first record",best:"Previous best",target:"Target",bad:"Do not increase the weight if form breaks down."}
+      : lang==="pl"
+      ? {history:"Brak historii",create:"Utwórz pierwszy zapis",best:"Poprzedni najlepszy wynik",target:"Cel",bad:"Nie zwiększaj ciężaru, jeśli technika się pogarsza."}
+      : {history:"Henüz geçmiş yok",create:"İlk kaydı oluştur",best:"Geçen en iyi",target:"Hedef",bad:"Form bozuluyorsa ağırlığı artırma."};
+
+    const names=["Incline Dumbbell Press","Cable Pec Deck / Cable Chest Fly","Up-to-Low Cable Crossover","Cable Lateral Raise","Cable Rear Delt Fly","Triceps Pushdown","Overhead Cable Triceps Extension","Cable Crunch","Lat Pulldown","Seated Cable Row","Straight-Arm Pulldown","Incline Dumbbell Curl","Preacher Curl","Bulgarian Split Squat","Dumbbell Romanian Deadlift","Forearm Curl"];
+
     box.innerHTML=names.map(name=>{
       const p=prs[name];
-      if(!p)return `<div class="overload-item"><span>${name}</span><strong>Henüz geçmiş yok</strong><b>İlk kaydı oluştur</b></div>`;
+      if(!p){
+        return `<div class="overload-item"><span>${name}</span><strong>${ui.history}</strong><button class="overload-record-btn" type="button" onclick='startExerciseRecord(${JSON.stringify(name)})'>＋ ${ui.create}</button></div>`;
+      }
       const nextKg=p.kg>=40?p.kg+2.5:p.kg+1.25;
-      return `<div class="overload-item"><span>${name}</span><strong>Geçen en iyi: ${p.kg} kg × ${p.reps}</strong><b>Hedef: ${nextKg} kg × 8–10</b><small>Form bozuluyorsa ağırlığı artırma.</small></div>`;
+      return `<div class="overload-item"><span>${name}</span><strong>${ui.best}: ${p.kg} kg × ${p.reps}</strong><b>${ui.target}: ${nextKg} kg × 8–10</b><small>${ui.bad}</small></div>`;
     }).join("");
   };
 
@@ -3516,7 +3640,7 @@ const UI_EXACT_EXTRA={en:{"Antrenman":"Workout","ANTRENMAN":"WORKOUT","Antrenman
   // FINAL LANGUAGE OVERRIDES: these are checked before every older translation layer.
   // They intentionally use complete phrases so dynamic content cannot fall back to mixed-language output.
   const FINAL_PAGE_EXACT={en:{"NOTLARIM":"MY NOTES","ANTRENMAN NOTLARI":"WORKOUT NOTES","BESLENME NOTLARI":"NUTRITION NOTES","BUGÜNÜN NOTU":"TODAY'S NOTE","Tek cümle yaz.":"Write one sentence.","Kaydet":"Save","VERİ GÜVENLİĞİ":"DATA SAFETY","Yedekle / Geri yükle":"BACKUP / RESTORE","Tüm site verilerini tek dosyada saklayabilirsin.":"You can save all app data in one file.","Verileri dışa aktar":"Export data","Verileri içe aktar":"Import data","Bugünkü antrenmanını, ağırlıkları ve hislerini yaz...":"Write today's workout, weights and how you felt...","Bugünkü beslenmeni ve hedeflerini yaz...":"Write today's nutrition and goals...","Bugün antrenmanda ne oldu? Enerjin nasıldı?":"What happened in today's workout? How was your energy?","AYLIK FİZİK TAKİBİ":"MONTHLY PHYSIQUE TRACKING","VÜCUT ANALİZİ":"BODY ANALYSIS","Fotoğraflarını ve ölçülerini yan yana değerlendir. Kesin teşhis değil; görsel değişim ve antrenman odağı analizi.":"Compare your photos and measurements side by side. This is not a diagnosis; it is a visual-change and training-focus analysis.","Hazır":"READY","analiz":"analysis","BU AY":"THIS MONTH","Yeni fotoğraflar":"NEW PHOTOS","ön • yan • arka":"front • side • back","ÖN":"FRONT","YAN":"SIDE","ARKA":"BACK","Fotoğraf ekle":"Add photo","Fotoğrafları analiz et":"Analyze photos","Temizle":"Clear","Fotoğraflar bu tarayıcıda saklanır. Analiz sonucu otomatik tıbbi teşhis değildir.":"Photos are stored in this browser. The analysis is not an automatic medical diagnosis.","BATU RAPORU":"BATU REPORT","Görsel değerlendirme":"Visual assessment","Henüz analiz yapılmadı.":"No analysis yet.","Fotoğraf ekleyip “Fotoğrafları analiz et” butonuna bas. Sistem, fotoğraf varlığını ve kayıtlı ölçülerini kullanarak kişisel takip raporu oluşturacak.":"Add a photo and click “Analyze photos”. The system will use the photo and your saved measurements to create a personal progress report.","AYLIK RAPOR":"MONTHLY REPORT","Gelecek ay için odak":"FOCUS FOR NEXT MONTH","fotoğraf + ölçü + antrenman":"photo + measurement + training","Kas gelişimi":"Muscle growth","Bel kontrolü":"Waist control","Öncelik":"Priority","Genel durum":"Overall status","Henüz yeterli kayıt yok.":"Not enough records yet.","ÖNCE / SONRA":"BEFORE / AFTER","Fotoğraf karşılaştırması":"PHOTO COMPARISON","Önce":"Before","Eski kayıt yok":"No previous record","Sonra":"After","Yeni kayıt yok":"No new record","HAFTALIK ÖZET":"WEEKLY SUMMARY","HAFTALIK RAPOR":"WEEKLY REPORT","Bu haftaki antrenman, beslenme, kilo ve su performansını tek yerde gör.":"See this week's training, nutrition, weight and water performance in one place.","hafta skoru":"week score","BU HAFTANIN ÖZETİ":"THIS WEEK'S SUMMARY","Ne oldu?":"What happened?","Henüz yeterli veri yok.":"Not enough data yet.","GELECEK HAFTA":"NEXT WEEK","Odak":"Focus","MARKET LİSTESİ":"SHOPPING LIST","1 haftalık alışveriş. Aldıklarını işaretleyebilirsin.":"One-week shopping list. Check off what you buy.","OTOMATİK MARKET":"AUTOMATIC SHOPPING","Haftalık planından oluştur":"Build from weekly plan","7 günlük menüyü baz alarak temel alışverişi tek tuşta hazırla.":"Build the basic shopping list from the 7-day menu with one click.","Listeyi oluştur":"Build list","7 günlük plandan oluştur":"Build from the 7-day plan","AKILLI MARKET":"SMART SHOPPING","Bu haftayı tek seferde çöz":"Solve the whole week at once","Temel ürünleri stokta tut; tarif seçerken tekrar tekrar düşünme.":"Keep basic foods stocked so you do not have to think twice when choosing a recipe.","PROTEİN PAKETİ":"PROTEIN PACK","KARBONHİDRAT PAKETİ":"CARB PACK","ARA ÖĞÜN PAKETİ":"SNACK PACK","SET ARASI":"SET REST","75 sn dinlen":"75 sec rest","Durdur":"Stop","PR Merkezi":"PR CENTER","REKORLAR":"RECORDS","En iyi ağırlık ve tekrar kombinasyonlarını saklar.":"Stores your best weight and rep combinations.","Beni şaşırt":"SURPRISE ME","Tarifleri yenile":"REFRESH RECIPES","Uyku alışkanlıkları":"SLEEP HABITS","Kafein kesme saati":"CAFFEINE CUTOFF","Yatmadan önce ekran":"SCREEN BEFORE BED","Uyku hedefi":"SLEEP TARGET","AYARLARI KAYDET":"SAVE SETTINGS","Enerji ve alışkanlık":"ENERGY & HABITS","Sabah enerjisi":"MORNING ENERGY","Gece kafein":"EVENING CAFFEINE","Ekran süresi":"SCREEN TIME","yatmadan önce dakika":"minutes before bed","dakika":"minutes","saat":"hours","Uyku notu":"SLEEP NOTE","Sabah nasıl hissettin?":"How did you feel this morning?","7 GÜN ORTALAMASI":"7-DAY AVERAGE","ORT. KALİTE":"AVG. QUALITY","ORT. ENERJİ":"AVG. ENERGY","SLEEP INSIGHT":"SLEEP INSIGHT","Bu hafta ne söylüyor?":"WHAT DOES THIS WEEK TELL YOU?"},pl:{"NOTLARIM":"MOJE NOTATKI","ANTRENMAN NOTLARI":"NOTATKI TRENINGOWE","BESLENME NOTLARI":"NOTATKI ŻYWIENIOWE","BUGÜNÜN NOTU":"DZISIEJSZA NOTATKA","Tek cümle yaz.":"Napisz jedno zdanie.","Kaydet":"Zapisz","VERİ GÜVENLİĞİ":"BEZPIECZEŃSTWO DANYCH","Yedekle / Geri yükle":"KOPIA ZAPASOWA / PRZYWRÓĆ","Tüm site verilerini tek dosyada saklayabilirsin.":"Możesz zapisać wszystkie dane aplikacji w jednym pliku.","Verileri dışa aktar":"Eksportuj dane","Verileri içe aktar":"Importuj dane","Bugünkü antrenmanını, ağırlıkları ve hislerini yaz...":"Wpisz dzisiejszy trening, ciężary i swoje samopoczucie...","Bugünkü beslenmeni ve hedeflerini yaz...":"Wpisz dzisiejsze żywienie i swoje cele...","Bugün antrenmanda ne oldu? Enerjin nasıldı?":"Co wydarzyło się dziś na treningu? Jaki był Twój poziom energii?","AYLIK FİZİK TAKİBİ":"MIESIĘCZNE ŚLEDZENIE SYLWETKI","VÜCUT ANALİZİ":"ANALIZA SYLWETKI","Fotoğraflarını ve ölçülerini yan yana değerlendir. Kesin teşhis değil; görsel değişim ve antrenman odağı analizi.":"Porównaj zdjęcia i pomiary sylwetki obok siebie. To nie jest diagnoza, lecz analiza zmian wizualnych i kierunku treningu.","Hazır":"GOTOWY","analiz":"analiza","BU AY":"W TYM MIESIĄCU","Yeni fotoğraflar":"NOWE ZDJĘCIA","ön • yan • arka":"przód • bok • tył","ÖN":"PRZÓD","YAN":"BOK","ARKA":"TYŁ","Fotoğraf ekle":"Dodaj zdjęcie","Fotoğrafları analiz et":"Analizuj zdjęcia","Temizle":"Wyczyść","Fotoğraflar bu tarayıcıda saklanır. Analiz sonucu otomatik tıbbi teşhis değildir.":"Zdjęcia są przechowywane w tej przeglądarce. Wynik analizy nie jest automatyczną diagnozą medyczną.","BATU RAPORU":"RAPORT BATU","Görsel değerlendirme":"OCENA WIZUALNA","Henüz analiz yapılmadı.":"Brak analizy.","Fotoğraf ekleyip “Fotoğrafları analiz et” butonuna bas. Sistem, fotoğraf varlığını ve kayıtlı ölçülerini kullanarak kişisel takip raporu oluşturacak.":"Dodaj zdjęcie i kliknij „Analizuj zdjęcia”. System wykorzysta zdjęcie i zapisane pomiary, aby utworzyć osobisty raport postępów.","AYLIK RAPOR":"RAPORT MIESIĘCZNY","Gelecek ay için odak":"CEL NA PRZYSZŁY MIESIĄC","fotoğraf + ölçü + antrenman":"zdjęcie + pomiar + trening","Kas gelişimi":"ROZWÓJ MIĘŚNI","Bel kontrolü":"KONTROLA TALII","Öncelik":"PRIORYTET","Genel durum":"OGÓLNY STAN","Henüz yeterli kayıt yok.":"Brak wystarczającej liczby zapisów.","ÖNCE / SONRA":"PRZED / PO","Fotoğraf karşılaştırması":"PORÓWNANIE ZDJĘĆ","Önce":"najpierw","Eski kayıt yok":"Brak poprzednich zapisów","Sonra":"następnie","Yeni kayıt yok":"Brak nowych zapisów","HAFTALIK ÖZET":"PODSUMOWANIE TYGODNIA","HAFTALIK RAPOR":"RAPORT TYGODNIOWY","Bu haftaki antrenman, beslenme, kilo ve su performansını tek yerde gör.":"Zobacz w jednym miejscu wyniki treningu, żywienia, wagi i nawodnienia z tego tygodnia.","hafta skoru":"wynik tygodnia","BU HAFTANIN ÖZETİ":"PODSUMOWANIE TEGO TYGODNIA","Ne oldu?":"CO SIĘ WYDARZYŁO?","Henüz yeterli veri yok.":"Brak wystarczających danych.","GELECEK HAFTA":"NASTĘPNY TYDZIEŃ","Odak":"CEL","MARKET LİSTESİ":"LISTA ZAKUPÓW","1 haftalık alışveriş. Aldıklarını işaretleyebilirsin.":"Zakupy na tydzień. Zaznacz to, co już kupiłeś.","OTOMATİK MARKET":"AUTOMATYCZNE ZAKUPY","Haftalık planından oluştur":"Utwórz z planu tygodniowego","7 günlük menüyü baz alarak temel alışverişi tek tuşta hazırla.":"Utwórz podstawową listę zakupów na podstawie 7-dniowego menu jednym kliknięciem.","Listeyi oluştur":"Utwórz listę","7 günlük plandan oluştur":"Utwórz z 7-dniowego planu","AKILLI MARKET":"INTELIGENTNE ZAKUPY","Bu haftayı tek seferde çöz":"Rozwiąż cały tydzień za jednym razem","Temel ürünleri stokta tut; tarif seçerken tekrar tekrar düşünme.":"Trzymaj podstawowe produkty w zapasie, aby nie zastanawiać się za każdym razem przy wyborze przepisu.","PROTEİN PAKETİ":"PAKIET BIAŁKOWY","KARBONHİDRAT PAKETİ":"PAKIET WĘGLOWODANÓW","ARA ÖĞÜN PAKETİ":"PAKIET PRZEKĄSEK","SET ARASI":"PRZERWA MIĘDZY SERIAMI","75 sn dinlen":"75 s przerwy","Durdur":"Zatrzymaj","PR Merkezi":"CENTRUM PR","REKORLAR":"REKORDY","En iyi ağırlık ve tekrar kombinasyonlarını saklar.":"Przechowuje najlepsze kombinacje ciężaru i powtórzeń.","Beni şaşırt":"ZASKOCZ MNIE","Tarifleri yenile":"ODŚWIEŻ PRZEPISY","Uyku alışkanlıkları":"NAWYKI SNU","Kafein kesme saati":"GODZINA OSTATNIEJ KAWY","Yatmadan önce ekran":"EKRAN PRZED SNEM","Uyku hedefi":"CEL SNU","AYARLARI KAYDET":"ZAPISZ USTAWIENIA","Enerji ve alışkanlık":"ENERGIA I NAWYKI","Sabah enerjisi":"ENERGIA RANO","Gece kafein":"WIECZORNA KAWA","Ekran süresi":"CZAS EKRANU","yatmadan önce dakika":"minuty przed snem","dakika":"minut","saat":"godz.","Uyku notu":"NOTATKA O ŚNIE","Sabah nasıl hissettin?":"Jak się dziś rano czułeś?","7 GÜN ORTALAMASI":"ŚREDNIA 7-DNIOWA","ORT. KALİTE":"ŚR. JAKOŚĆ","ORT. ENERJİ":"ŚR. ENERGIA","SLEEP INSIGHT":"INSIGHT SNU","Bu hafta ne söylüyor?":"CO MÓWI TEN TYDZIEŃ?"}};
-const FINAL_ULTRA_EXACT={en:{"112 tarif":"112 recipes","tarif":"recipes","112 tarif bulundu":"112 recipes found","Beni şaşırt":"SURPRISE ME","Antrenman tamam":"WORKOUT COMPLETE","Listeyi oluştur":"BUILD LIST","Tarifleri yenile":"REFRESH RECIPES","Favoriler":"Favorites","Tümü":"All","Tavuk":"Chicken","Karbonhidrat":"Carbs","Protein":"Protein","Ara öğün":"Snack","Ana öğün":"Main meal","Bugün antrenmanda ne oldu? Enerjin nasıldı?":"What happened in today's workout? How was your energy?","Bugün nasıl geçti?":"How did your day go?","Bugünkü antrenmanın nasıldı?":"How was today's workout?","Bugün ne yaptın?":"What did you do today?","Enerjin nasıldı?":"How was your energy?","Bugünkü antrenmanını, ağırlıkları ve hislerini yaz...":"Write today's workout, weights and how you felt...","Bugünkü beslenmeni ve hedeflerini yaz...":"Write today's nutrition and goals...","Bugün için notunu yaz...":"Write your note for today...","Bugün nasıl hissettin?":"How did you feel today?","Bel (cm)":"Waist (cm)","Göğüs (cm)":"Chest (cm)","bark / Bel":"Shoulders / Waist","BU AY":"THIS MONTH","ön • yan • arka":"front • side • back","ÖN":"FRONT","YAN":"SIDE","ARKA":"BACK","BATU RAPORU":"BATU REPORT","Görsel değerlendirme":"Visual assessment","Henüz analiz yapılmadı.":"No analysis yet.","Eski kayıt yok":"No previous record","Yeni kayıt yok":"No new record","Henüz yeterli kayıt yok.":"Not enough records yet.","Tek cümle yaz.":"Write one sentence.","Kaydet":"Save","NOTLARIM":"MY NOTES","ANTRENMAN NOTLARI":"WORKOUT NOTES","BESLENME NOTLARI":"NUTRITION NOTES","BUGÜNÜN NOTU":"TODAY'S NOTE","VERİ GÜVENLİĞİ":"DATA SAFETY","Yedekle / Geri yükle":"BACKUP / RESTORE","Verileri dışa aktar":"Export data","Verileri içe aktar":"Import data","SET ARASI":"SET REST","75 sn dinlen":"75 sec rest","Durdur":"Stop","PR Merkezi":"PR CENTER","REKORLAR":"RECORDS","En iyi ağırlık ve tekrar kombinasyonlarını saklar.":"Stores your best weight and rep combinations.","Uyku alışkanlıkları":"SLEEP HABITS","Enerji ve alışkanlık":"ENERGY & HABITS","Gece kafein":"EVENING CAFFEINE","Sabah enerjisi":"MORNING ENERGY","Uyku notu":"SLEEP NOTE","Sabah nasıl hissettin?":"How did you feel this morning?","UYKU HEDEFİNİ KAYDET":"SAVE SLEEP GOAL","AYARLARI KAYDET":"SAVE SETTINGS","Kafein kesme saati":"CAFFEINE CUTOFF","Yatmadan önce ekran":"SCREEN BEFORE BED","Uyku hedefi":"SLEEP TARGET","Ekran süresi":"SCREEN TIME","yatmadan önce dakika":"minutes before bed","dakika":"minutes","saat":"hours","7 GÜN ORTALAMASI":"7-DAY AVERAGE","ORT. KALİTE":"AVG. QUALITY","ORT. ENERJİ":"AVG. ENERGY","Uyku Geçmişi":"SLEEP HISTORY","Son kayıt":"LAST RECORD","Toparlanma":"RECOVERY","Regenerasyon":"RECOVERY","Bu hafta ne söylüyor?":"WHAT DOES THIS WEEK TELL YOU?","7 günlük plandan oluştur":"BUILD FROM 7-DAY PLAN","AKILLI MARKET":"SMART SHOPPING","Bu haftayı tek seferde çöz":"SOLVE THE WHOLE WEEK AT ONCE","PROTEİN PAKETİ":"PROTEIN PACK","KARBONHİDRAT PAKETİ":"CARB PACK","ARA ÖĞÜN PAKETİ":"SNACK PACK","Bulgu":"Finding","Özet":"Summary"},pl:{"112 tarif":"112 przepisów","tarif":"przepisów","112 tarif bulundu":"Znaleziono 112 przepisów","Beni şaşırt":"ZASKOCZ MNIE","Antrenman tamam":"TRENING UKOŃCZONY","Listeyi oluştur":"UTWÓRZ LISTĘ","Tarifleri yenile":"ODŚWIEŻ PRZEPISY","Favoriler":"Ulubione","Tümü":"Wszystkie","Tavuk":"Kurczak","Karbonhidrat":"Węglowodany","Protein":"Białko","Ara öğün":"Przekąska","Ana öğün":"Główny posiłek","Bugün antrenmanda ne oldu? Enerjin nasıldı?":"Co wydarzyło się dziś na treningu? Jaki był Twój poziom energii?","Bugün nasıl geçti?":"Jak minął Twój dzień?","Bugünkü antrenmanın nasıldı?":"Jak Ci poszedł dzisiejszy trening?","Bugün ne yaptın?":"Co dziś zrobiłeś?","Enerjin nasıldı?":"Jaki był Twój poziom energii?","Bugünkü antrenmanını, ağırlıkları ve hislerini yaz...":"Wpisz dzisiejszy trening, ciężary i swoje samopoczucie...","Bugünkü beslenmeni ve hedeflerini yaz...":"Wpisz dzisiejsze żywienie i swoje cele...","Bugün için notunu yaz...":"Wpisz swoją notatkę na dziś...","Bugün nasıl hissettin?":"Jak się dziś czułeś?","Bel (cm)":"Talia (cm)","Göğüs (cm)":"Klatka piersiowa (cm)","bark / Bel":"Barki / talia","BU AY":"W TYM MIESIĄCU","ön • yan • arka":"przód • bok • tył","ÖN":"PRZÓD","YAN":"BOK","ARKA":"TYŁ","BATU RAPORU":"RAPORT BATU","Görsel değerlendirme":"OCENA WIZUALNA","Henüz analiz yapılmadı.":"Brak analizy.","Eski kayıt yok":"Brak poprzednich zapisów","Yeni kayıt yok":"Brak nowych zapisów","Henüz yeterli kayıt yok.":"Brak wystarczającej liczby zapisów.","Tek cümle yaz.":"Napisz jedno zdanie.","Kaydet":"Zapisz","NOTLARIM":"MOJE NOTATKI","ANTRENMAN NOTLARI":"NOTATKI TRENINGOWE","BESLENME NOTLARI":"NOTATKI ŻYWIENIOWE","BUGÜNÜN NOTU":"DZISIEJSZA NOTATKA","VERİ GÜVENLİĞİ":"BEZPIECZEŃSTWO DANYCH","Yedekle / Geri yükle":"KOPIA ZAPASOWA / PRZYWRÓĆ","Verileri dışa aktar":"EKSPORTUJ DANE","Verileri içe aktar":"IMPORTUJ DANE","SET ARASI":"PRZERWA MIĘDZY SERIAMI","75 sn dinlen":"75 S PRZERWY","Durdur":"Zatrzymaj","PR Merkezi":"CENTRUM PR","REKORLAR":"REKORDY","En iyi ağırlık ve tekrar kombinasyonlarını saklar.":"Przechowuje najlepsze kombinacje ciężaru i powtórzeń.","Uyku alışkanlıkları":"NAWYKI SNU","Enerji ve alışkanlık":"ENERGIA I NAWYKI","Gece kafein":"WIECZORNA KAWA","Sabah enerjisi":"ENERGIA RANO","Uyku notu":"NOTATKA O ŚNIE","Sabah nasıl hissettin?":"Jak się dziś czułeś?","UYKU HEDEFİNİ KAYDET":"ZAPISZ CEL SNU","AYARLARI KAYDET":"ZAPISZ USTAWIENIA","Kafein kesme saati":"GODZINA OSTATNIEJ KAWY","Yatmadan önce ekran":"EKRAN PRZED SNEM","Uyku hedefi":"CEL SNU","Ekran süresi":"CZAS EKRANU","yatmadan önce dakika":"minuty przed snem","dakika":"minut","saat":"godz.","7 GÜN ORTALAMASI":"ŚREDNIA 7-DNIOWA","ORT. KALİTE":"ŚR. JAKOŚĆ","ORT. ENERJİ":"ŚR. ENERGIA","Uyku Geçmişi":"HISTORIA SNU","Son kayıt":"OSTATNI ZAPIS","Toparlanma":"REGENERACJA","Regenerasyon":"REGENERACJA","Bu hafta ne söylüyor?":"CO MÓWI TEN TYDZIEŃ?","7 günlük plandan oluştur":"UTWÓRZ Z 7-DNIOWEGO PLANU","AKILLI MARKET":"INTELIGENTNE ZAKUPY","Bu haftayı tek seferde çöz":"ROZWIĄŻ CAŁY TYDZIEŃ ZA JEDNYM RAZEM","PROTEİN PAKETİ":"PAKIET BIAŁKOWY","KARBONHİDRAT PAKETİ":"PAKIET WĘGLOWODANÓW","ARA ÖĞÜN PAKETİ":"PAKIET PRZEKĄSEK"}};
+const FINAL_ULTRA_EXACT={en:{"Antrenman":"Workout","A / B — Push + Pull + minimum bacak":"A / B — Push + Pull + minimal legs","Odak:":"Focus:","Daha az gereksiz hareket, daha net progresyon. A → B → Dinlen döngüsünü koruyoruz.":"Fewer unnecessary exercises, clearer progression. Keep the A → B → Rest cycle.","Program, mevcut ekipmanına ve hedefin olan üst vücut/V-taper gelişimine göre düzenlendi. Bacaklar tamamen atlanmıyor ama programın odağı da değil.":"The program is built around your available equipment and upper-body/V-taper goal. Legs are not skipped completely, but they are not the focus.","A Günü — Göğüs + Omuz + Triceps + Karın":"Day A — Chest + Shoulders + Triceps + Abs","B Günü — Sırt + Biceps + Minimum Bacak + Ön Kol":"Day B — Back + Biceps + Minimal Legs + Forearms","HAREKET":"EXERCISE","Üst göğüs":"Upper chest","Göğüs izolasyonu":"Chest isolation","Göğüs":"Chest","Yukarıdan aşağı":"High to low","Yan omuz":"Side delts","Hafif yük":"Light load","Arka omuz":"Rear delts","Arka kol":"Triceps","Uzun baş":"Long head","Karın":"Abs","Lat / sırt genişliği":"Lats / back width","Orta sırt":"Mid back","Geniş / dar dönüşümlü":"Wide / narrow alternating","Lat":"Lats","Düşük biceps katkısı":"Low biceps contribution","Biceps":"Biceps","Kontrollü tekrar":"Controlled reps","Ön bacak":"Quads","Kalça":"Glutes","Arka bacak":"Hamstrings","Ön kol":"Forearms","Kontrollü tempo":"Controlled tempo","Bench yaklaşık 30°. Omuzları geride tut ve ağırlığı kontrollü indir.":"Bench at about 30°. Keep your shoulders back and lower the weight under control.","10/10/10'a ulaştığında ağırlığı artır.":"Increase the weight when you reach 10/10/10.","Göğüsü sıkıştır, omuzları öne düşürme ve dönüşü kontrollü yap.":"Squeeze the chest, keep the shoulders from rolling forward, and return under control.","Amaç ağırlık göstermek değil, göğüste gerilim oluşturmak.":"The goal is tension in the chest, not moving the heaviest weight possible.","Kabloları yukarıdan başlatıp aşağı ve içeri getir. Gövdeyi sabit tut.":"Start the cables high and bring them down and inward. Keep your torso stable.","Hareket boyunca göğüs gerilimini koru.":"Keep tension on the chest throughout the movement.","Gövdeyi sabit tut ve kolu kontrollü yana aç. Sallanma yok.":"Keep your torso stable and raise the arm out to the side under control. No swinging.","V-taper için bu hareketi ciddiye al.":"Take this exercise seriously for your V-taper.","Gövdeyi sabit tut ve kolları kontrollü aç. Hareketi arka omuzla yönet.":"Keep your torso stable and open your arms under control. Drive the movement with the rear delts.","Kablo sürekli gerilim verdiği için ağır kilo şart değil.":"Heavy weight is not necessary because the cable provides constant tension.","Dirsekleri gövdeye yakın tut ve alt pozisyonda kontrollü sık.":"Keep your elbows close to your torso and squeeze under control at the bottom.","Form bozuluyorsa ağırlık artışı erken.":"If your form breaks down, the weight increase was premature.","Dirsekleri mümkün olduğunca sabit tut ve aşağıda kontrollü esneme al.":"Keep your elbows as still as possible and get a controlled stretch at the bottom.","Önce ROM'u ve formu düzelt, sonra ağırlığı artır.":"Fix your ROM and form first, then increase the weight.","Hareketi karın kaslarınla başlat. Kalçayı sallama ve gövdeyi kontrol et.":"Initiate the movement with your abs. Do not swing your hips; keep your torso controlled.","Tam ROM kullan; tekrarları kontrollü yap ve ağırlığı form bozulmadan artır.":"Use a full ROM; perform controlled reps and increase the weight only while form stays clean.","Barı üst göğse doğru çek. Gövdeyi geriye savurup tekrar çalma.":"Pull the bar toward your upper chest. Do not swing your torso backward to cheat reps.","Dirsekleri aşağı ve arkaya sür.":"Drive your elbows down and back.","Göğsü sabit tut ve dirsekleri kontrollü geriye çek. Tek kol versiyonu yok.":"Keep your chest stable and pull your elbows back under control. No single-arm version.","B1 geniş tutuş, B2 dar/neutral tutuş şeklinde dönüşümlü kullan.":"Alternate B1 with a wide grip and B2 with a narrow/neutral grip.","Kolları büyük ölçüde düz tutarak barı kalçaya doğru indir. Gövdeyi sabit tut.":"Keep your arms mostly straight and bring the bar down toward your hips. Keep your torso stable.","Amaç latları izole etmek; ağırlığı sallayarak çekme.":"The goal is to isolate the lats; do not swing the weight.","Bench üzerinde kolları geride bırak ve ağırlığı savurmadan kaldır.":"Let your arms hang behind you on the bench and curl the weight without swinging.","Eksantrik kısmı kontrollü tut.":"Control the eccentric phase.","Dirsekleri ped üzerinde sabit tut ve ağırlığı tam kontrolle indirip kaldır.":"Keep your elbows fixed on the pad and lower and raise the weight with full control.","Alt pozisyonda eklemi kilitlemeden kontrollü esneme al.":"Get a controlled stretch at the bottom without locking the joint.","Arka ayağı bench'e koy. Ön bacakla kontrollü inip çık.":"Place your rear foot on the bench. Lower and rise under control using the front leg.","Bacak önceliği değil; temiz teknik ve minimum etkili hacim yeterli.":"Legs are not the priority; clean technique and minimum effective volume are enough.","Kalçayı geriye gönder; dumbbell'ları bacaklara yakın tut ve sırt pozisyonunu koru.":"Push your hips back; keep the dumbbells close to your legs and maintain your back position.","Bel pozisyonu bozuluyorsa seti bitir.":"End the set if your back position breaks down.","Bilekleri kontrollü hareket ettir. Ağırlığı savurmadan tam hareket aralığında çalış.":"Move your wrists under control. Use a full range of motion without swinging the weight.","Ön kolu hissederek çalış; ağırlığı form bozulmadan artır.":"Focus on the forearms; increase the weight only while form stays clean.","A → B → Dinlen döngüsünü koruyoruz.":"We keep the A → B → Rest cycle.","A → B → Dinlen döngüsünü koruyoruz.":"Zachowujemy cykl A → B → Odpoczynek.","A → B → Dinlen":"A → B → Rest","Döngüyü sabit tut. Yeni split'e geçmek yerine aynı hareketlerde tekrar ve ağırlık progresyonunu takip et.":"Keep the cycle consistent. Instead of switching splits, track rep and weight progression on the same exercises.","Göğüs + Omuz + Triceps + Karın":"Chest + Shoulders + Triceps + Abs","Sırt + Biceps + Minimum Bacak + Ön Kol":"Back + Biceps + Minimal Legs + Forearms","Toparlanma":"Recovery","8 hareket":"8 exercises","Progresyon":"Progression","Çoğu sette RIR 1–2 bırak. Tekrar aralığının üst sınırına tüm setlerde ulaştığında ağırlığı artır. Örneğin 10/10/10 tamamlandığında bir sonraki ağırlığa geç.":"Leave 1–2 RIR on most sets. Increase the weight when you reach the top of the rep range on all sets. For example, move to the next weight after completing 10/10/10.","İlerlemeli Yüklenme":"Progressive Overload","Son kayıtlarına göre bir sonraki antrenmanda neyi hedeflemen gerektiğini gösterir.":"Shows what you should target in your next workout based on your latest records.","112 tarif":"112 recipes","tarif":"recipes","112 tarif bulundu":"112 recipes found","Beni şaşırt":"SURPRISE ME","Antrenman tamam":"WORKOUT COMPLETE","Listeyi oluştur":"BUILD LIST","Tarifleri yenile":"REFRESH RECIPES","Favoriler":"Favorites","Tümü":"All","Tavuk":"Chicken","Karbonhidrat":"Carbs","Protein":"Protein","Ara öğün":"Snack","Ana öğün":"Main meal","Bugün antrenmanda ne oldu? Enerjin nasıldı?":"What happened in today's workout? How was your energy?","Bugün nasıl geçti?":"How did your day go?","Bugünkü antrenmanın nasıldı?":"How was today's workout?","Bugün ne yaptın?":"What did you do today?","Enerjin nasıldı?":"How was your energy?","Bugünkü antrenmanını, ağırlıkları ve hislerini yaz...":"Write today's workout, weights and how you felt...","Bugünkü beslenmeni ve hedeflerini yaz...":"Write today's nutrition and goals...","Bugün için notunu yaz...":"Write your note for today...","Bugün nasıl hissettin?":"How did you feel today?","Bel (cm)":"Waist (cm)","Göğüs (cm)":"Chest (cm)","bark / Bel":"Shoulders / Waist","BU AY":"THIS MONTH","ön • yan • arka":"front • side • back","ÖN":"FRONT","YAN":"SIDE","ARKA":"BACK","BATU RAPORU":"BATU REPORT","Görsel değerlendirme":"Visual assessment","Henüz analiz yapılmadı.":"No analysis yet.","Eski kayıt yok":"No previous record","Yeni kayıt yok":"No new record","Henüz yeterli kayıt yok.":"Not enough records yet.","Tek cümle yaz.":"Write one sentence.","Kaydet":"Save","NOTLARIM":"MY NOTES","ANTRENMAN NOTLARI":"WORKOUT NOTES","BESLENME NOTLARI":"NUTRITION NOTES","BUGÜNÜN NOTU":"TODAY'S NOTE","VERİ GÜVENLİĞİ":"DATA SAFETY","Yedekle / Geri yükle":"BACKUP / RESTORE","Verileri dışa aktar":"Export data","Verileri içe aktar":"Import data","SET ARASI":"SET REST","75 sn dinlen":"75 sec rest","Durdur":"Stop","PR Merkezi":"PR CENTER","REKORLAR":"RECORDS","En iyi ağırlık ve tekrar kombinasyonlarını saklar.":"Stores your best weight and rep combinations.","Uyku alışkanlıkları":"SLEEP HABITS","Enerji ve alışkanlık":"ENERGY & HABITS","Gece kafein":"EVENING CAFFEINE","Sabah enerjisi":"MORNING ENERGY","Uyku notu":"SLEEP NOTE","Sabah nasıl hissettin?":"How did you feel this morning?","UYKU HEDEFİNİ KAYDET":"SAVE SLEEP GOAL","AYARLARI KAYDET":"SAVE SETTINGS","Kafein kesme saati":"CAFFEINE CUTOFF","Yatmadan önce ekran":"SCREEN BEFORE BED","Uyku hedefi":"SLEEP TARGET","Ekran süresi":"SCREEN TIME","yatmadan önce dakika":"minutes before bed","dakika":"minutes","saat":"hours","7 GÜN ORTALAMASI":"7-DAY AVERAGE","ORT. KALİTE":"AVG. QUALITY","ORT. ENERJİ":"AVG. ENERGY","Uyku Geçmişi":"SLEEP HISTORY","Son kayıt":"LAST RECORD","Toparlanma":"RECOVERY","Regenerasyon":"RECOVERY","Bu hafta ne söylüyor?":"WHAT DOES THIS WEEK TELL YOU?","7 günlük plandan oluştur":"BUILD FROM 7-DAY PLAN","AKILLI MARKET":"SMART SHOPPING","Bu haftayı tek seferde çöz":"SOLVE THE WHOLE WEEK AT ONCE","PROTEİN PAKETİ":"PROTEIN PACK","KARBONHİDRAT PAKETİ":"CARB PACK","ARA ÖĞÜN PAKETİ":"SNACK PACK","Bulgu":"Finding","Özet":"Summary"},pl:{"Antrenman":"Trening","A / B — Push + Pull + minimum bacak":"A / B — Push + Pull + minimum nóg","Odak:":"Cel:","Daha az gereksiz hareket, daha net progresyon. A → B → Dinlen döngüsünü koruyoruz.":"Mniej zbędnych ćwiczeń, wyraźniejsza progresja. Zachowaj cykl A → B → Odpoczynek.","Program, mevcut ekipmanına ve hedefin olan üst vücut/V-taper gelişimine göre düzenlendi. Bacaklar tamamen atlanmıyor ama programın odağı da değil.":"Program jest dopasowany do Twojego sprzętu i celu rozwoju górnej części ciała/V-taper. Nogi nie są całkowicie pomijane, ale nie są priorytetem.","A Günü — Göğüs + Omuz + Triceps + Karın":"Dzień A — Klatka + Barki + Triceps + Brzuch","B Günü — Sırt + Biceps + Minimum Bacak + Ön Kol":"Dzień B — Plecy + Biceps + Minimum nóg + Przedramiona","HAREKET":"ĆWICZENIE","Üst göğüs":"Górna klatka","Göğüs izolasyonu":"Izolacja klatki","Göğüs":"Klatka","Yukarıdan aşağı":"Z góry w dół","Yan omuz":"Boczne aktony barków","Hafif yük":"Lekki ciężar","Arka omuz":"Tylny akton barków","Arka kol":"Triceps","Uzun baş":"Długa głowa","Karın":"Brzuch","Lat / sırt genişliği":"Laty / szerokość pleców","Orta sırt":"Środkowa część pleców","Geniş / dar dönüşümlü":"Naprzemiennie szeroki / wąski chwyt","Lat":"Laty","Düşük biceps katkısı":"Niewielki udział bicepsa","Biceps":"Biceps","Kontrollü tekrar":"Kontrolowane powtórzenia","Ön bacak":"Czworogłowe","Kalça":"Pośladki","Arka bacak":"Dwugłowe","Ön kol":"Przedramiona","Kontrollü tempo":"Kontrolowane tempo","Bench yaklaşık 30°. Omuzları geride tut ve ağırlığı kontrollü indir.":"Ławka około 30°. Cofnij barki i opuszczaj ciężar pod kontrolą.","10/10/10'a ulaştığında ağırlığı artır.":"Zwiększ ciężar po osiągnięciu 10/10/10.","Göğüsü sıkıştır, omuzları öne düşürme ve dönüşü kontrollü yap.":"Ściśnij klatkę, nie wysuwaj barków do przodu i wracaj pod kontrolą.","Amaç ağırlık göstermek değil, göğüste gerilim oluşturmak.":"Celem jest napięcie klatki, a nie popisywanie się ciężarem.","Kabloları yukarıdan başlatıp aşağı ve içeri getir. Gövdeyi sabit tut.":"Zacznij wysoko i prowadź linki w dół oraz do środka. Stabilizuj tułów.","Hareket boyunca göğüs gerilimini koru.":"Utrzymuj napięcie klatki przez cały ruch.","Gövdeyi sabit tut ve kolu kontrollü yana aç. Sallanma yok.":"Stabilizuj tułów i unoś ramię w bok pod kontrolą. Bez bujania.","V-taper için bu hareketi ciddiye al.":"Traktuj to ćwiczenie poważnie dla V-taper.","Gövdeyi sabit tut ve kolları kontrollü aç. Hareketi arka omuzla yönet.":"Stabilizuj tułów i otwieraj ramiona pod kontrolą. Prowadź ruch tylnym aktonem barków.","Kablo sürekli gerilim verdiği için ağır kilo şart değil.":"Duży ciężar nie jest konieczny, ponieważ wyciąg zapewnia stałe napięcie.","Dirsekleri gövdeye yakın tut ve alt pozisyonda kontrollü sık.":"Trzymaj łokcie blisko tułowia i kontrolowanie dopnij ruch na dole.","Form bozuluyorsa ağırlık artışı erken.":"Jeśli technika się pogarsza, zwiększenie ciężaru było zbyt wczesne.","Dirsekleri mümkün olduğunca sabit tut ve aşağıda kontrollü esneme al.":"Trzymaj łokcie możliwie nieruchomo i uzyskaj kontrolowane rozciągnięcie na dole.","Önce ROM'u ve formu düzelt, sonra ağırlığı artır.":"Najpierw popraw ROM i technikę, potem zwiększ ciężar.","Hareketi karın kaslarınla başlat. Kalçayı sallama ve gövdeyi kontrol et.":"Rozpocznij ruch mięśniami brzucha. Nie bujaj biodrami i kontroluj tułów.","Tam ROM kullan; tekrarları kontrollü yap ve ağırlığı form bozulmadan artır.":"Używaj pełnego ROM; wykonuj kontrolowane powtórzenia i zwiększaj ciężar tylko przy zachowaniu techniki.","Barı üst göğse doğru çek. Gövdeyi geriye savurup tekrar çalma.":"Przyciągaj drążek do górnej części klatki. Nie odchylaj tułowia, aby oszukiwać powtórzenia.","Dirsekleri aşağı ve arkaya sür.":"Prowadź łokcie w dół i do tyłu.","Göğsü sabit tut ve dirsekleri kontrollü geriye çek. Tek kol versiyonu yok.":"Stabilizuj klatkę i kontrolowanie cofaj łokcie. Bez wersji jednorącz.","B1 geniş tutuş, B2 dar/neutral tutuş şeklinde dönüşümlü kullan.":"Stosuj naprzemiennie B1 z szerokim chwytem i B2 z wąskim/neutralnym chwytem.","Kolları büyük ölçüde düz tutarak barı kalçaya doğru indir. Gövdeyi sabit tut.":"Trzymaj ramiona prawie proste i opuszczaj drążek w kierunku bioder. Stabilizuj tułów.","Amaç latları izole etmek; ağırlığı sallayarak çekme.":"Celem jest izolacja latów; nie szarp ciężarem.","Bench üzerinde kolları geride bırak ve ağırlığı savurmadan kaldır.":"Pozostaw ramiona za tułowiem na ławce i uginaj bez bujania.","Eksantrik kısmı kontrollü tut.":"Kontroluj fazę ekscentryczną.","Dirsekleri ped üzerinde sabit tut ve ağırlığı tam kontrolle indirip kaldır.":"Trzymaj łokcie stabilnie na podparciu i opuszczaj oraz podnoś ciężar pod pełną kontrolą.","Alt pozisyonda eklemi kilitlemeden kontrollü esneme al.":"Uzyskaj kontrolowane rozciągnięcie na dole bez blokowania stawu.","Arka ayağı bench'e koy. Ön bacakla kontrollü inip çık.":"Oprzyj tylną stopę na ławce. Schodź i wstawaj pod kontrolą przedniej nogi.","Bacak önceliği değil; temiz teknik ve minimum etkili hacim yeterli.":"Nogi nie są priorytetem; wystarczy czysta technika i minimalna skuteczna objętość.","Kalçayı geriye gönder; dumbbell'ları bacaklara yakın tut ve sırt pozisyonunu koru.":"Cofnij biodra; trzymaj hantle blisko nóg i utrzymuj pozycję pleców.","Bel pozisyonu bozuluyorsa seti bitir.":"Zakończ serię, jeśli pozycja pleców się pogarsza.","Bilekleri kontrollü hareket ettir. Ağırlığı savurmadan tam hareket aralığında çalış.":"Poruszaj nadgarstkami pod kontrolą. Pracuj w pełnym zakresie bez bujania ciężarem.","Ön kolu hissederek çalış; ağırlığı form bozulmadan artır.":"Skup się na przedramionach; zwiększaj ciężar tylko przy zachowaniu techniki.","A → B → Dinlen":"A → B → Odpoczynek","Döngüyü sabit tut. Yeni split'e geçmek yerine aynı hareketlerde tekrar ve ağırlık progresyonunu takip et.":"Zachowaj stały cykl. Zamiast zmieniać split, śledź progresję powtórzeń i ciężaru w tych samych ćwiczeniach.","Göğüs + Omuz + Triceps + Karın":"Klatka + Barki + Triceps + Brzuch","Sırt + Biceps + Minimum Bacak + Ön Kol":"Plecy + Biceps + Minimum nóg + Przedramiona","Toparlanma":"Regeneracja","8 hareket":"8 ćwiczeń","Progresyon":"Progresja","Çoğu sette RIR 1–2 bırak. Tekrar aralığının üst sınırına tüm setlerde ulaştığında ağırlığı artır. Örneğin 10/10/10 tamamlandığında bir sonraki ağırlığa geç.":"Zostaw 1–2 RIR w większości serii. Zwiększ ciężar, gdy we wszystkich seriach osiągniesz górną granicę zakresu. Na przykład przejdź do kolejnego ciężaru po wykonaniu 10/10/10.","İlerlemeli Yüklenme":"Progresywne obciążenie","Son kayıtlarına göre bir sonraki antrenmanda neyi hedeflemen gerektiğini gösterir.":"Pokazuje, jaki cel obrać na następnym treningu na podstawie ostatnich zapisów.","112 tarif":"112 przepisów","tarif":"przepisów","112 tarif bulundu":"Znaleziono 112 przepisów","Beni şaşırt":"ZASKOCZ MNIE","Antrenman tamam":"TRENING UKOŃCZONY","Listeyi oluştur":"UTWÓRZ LISTĘ","Tarifleri yenile":"ODŚWIEŻ PRZEPISY","Favoriler":"Ulubione","Tümü":"Wszystkie","Tavuk":"Kurczak","Karbonhidrat":"Węglowodany","Protein":"Białko","Ara öğün":"Przekąska","Ana öğün":"Główny posiłek","Bugün antrenmanda ne oldu? Enerjin nasıldı?":"Co wydarzyło się dziś na treningu? Jaki był Twój poziom energii?","Bugün nasıl geçti?":"Jak minął Twój dzień?","Bugünkü antrenmanın nasıldı?":"Jak Ci poszedł dzisiejszy trening?","Bugün ne yaptın?":"Co dziś zrobiłeś?","Enerjin nasıldı?":"Jaki był Twój poziom energii?","Bugünkü antrenmanını, ağırlıkları ve hislerini yaz...":"Wpisz dzisiejszy trening, ciężary i swoje samopoczucie...","Bugünkü beslenmeni ve hedeflerini yaz...":"Wpisz dzisiejsze żywienie i swoje cele...","Bugün için notunu yaz...":"Wpisz swoją notatkę na dziś...","Bugün nasıl hissettin?":"Jak się dziś czułeś?","Bel (cm)":"Talia (cm)","Göğüs (cm)":"Klatka piersiowa (cm)","bark / Bel":"Barki / talia","BU AY":"W TYM MIESIĄCU","ön • yan • arka":"przód • bok • tył","ÖN":"PRZÓD","YAN":"BOK","ARKA":"TYŁ","BATU RAPORU":"RAPORT BATU","Görsel değerlendirme":"OCENA WIZUALNA","Henüz analiz yapılmadı.":"Brak analizy.","Eski kayıt yok":"Brak poprzednich zapisów","Yeni kayıt yok":"Brak nowych zapisów","Henüz yeterli kayıt yok.":"Brak wystarczającej liczby zapisów.","Tek cümle yaz.":"Napisz jedno zdanie.","Kaydet":"Zapisz","NOTLARIM":"MOJE NOTATKI","ANTRENMAN NOTLARI":"NOTATKI TRENINGOWE","BESLENME NOTLARI":"NOTATKI ŻYWIENIOWE","BUGÜNÜN NOTU":"DZISIEJSZA NOTATKA","VERİ GÜVENLİĞİ":"BEZPIECZEŃSTWO DANYCH","Yedekle / Geri yükle":"KOPIA ZAPASOWA / PRZYWRÓĆ","Verileri dışa aktar":"EKSPORTUJ DANE","Verileri içe aktar":"IMPORTUJ DANE","SET ARASI":"PRZERWA MIĘDZY SERIAMI","75 sn dinlen":"75 S PRZERWY","Durdur":"Zatrzymaj","PR Merkezi":"CENTRUM PR","REKORLAR":"REKORDY","En iyi ağırlık ve tekrar kombinasyonlarını saklar.":"Przechowuje najlepsze kombinacje ciężaru i powtórzeń.","Uyku alışkanlıkları":"NAWYKI SNU","Enerji ve alışkanlık":"ENERGIA I NAWYKI","Gece kafein":"WIECZORNA KAWA","Sabah enerjisi":"ENERGIA RANO","Uyku notu":"NOTATKA O ŚNIE","Sabah nasıl hissettin?":"Jak się dziś czułeś?","UYKU HEDEFİNİ KAYDET":"ZAPISZ CEL SNU","AYARLARI KAYDET":"ZAPISZ USTAWIENIA","Kafein kesme saati":"GODZINA OSTATNIEJ KAWY","Yatmadan önce ekran":"EKRAN PRZED SNEM","Uyku hedefi":"CEL SNU","Ekran süresi":"CZAS EKRANU","yatmadan önce dakika":"minuty przed snem","dakika":"minut","saat":"godz.","7 GÜN ORTALAMASI":"ŚREDNIA 7-DNIOWA","ORT. KALİTE":"ŚR. JAKOŚĆ","ORT. ENERJİ":"ŚR. ENERGIA","Uyku Geçmişi":"HISTORIA SNU","Son kayıt":"OSTATNI ZAPIS","Toparlanma":"REGENERACJA","Regenerasyon":"REGENERACJA","Bu hafta ne söylüyor?":"CO MÓWI TEN TYDZIEŃ?","7 günlük plandan oluştur":"UTWÓRZ Z 7-DNIOWEGO PLANU","AKILLI MARKET":"INTELIGENTNE ZAKUPY","Bu haftayı tek seferde çöz":"ROZWIĄŻ CAŁY TYDZIEŃ ZA JEDNYM RAZEM","PROTEİN PAKETİ":"PAKIET BIAŁKOWY","KARBONHİDRAT PAKETİ":"PAKIET WĘGLOWODANÓW","ARA ÖĞÜN PAKETİ":"PAKIET PRZEKĄSEK"}};
 const HARD_EXACT={
     en:{
       "Protein tamam":"Protein complete","Boy":"Height","8 saat":"8 hours","Durdur":"Stop",
@@ -3923,6 +4047,187 @@ function translateSubtree(root,lang){
     });
   }
 
+  // Dedicated training-section translation layer. The workout page contains long, exact phrases
+  // and dynamically rendered progression controls, so they are translated as a complete unit.
+  const TRAINING_EXACT={en:{
+    "Antrenman":"Workout",
+    "A / B — Push + Pull + minimum bacak":"A / B — Push + Pull + minimal legs",
+    "Odak":"Focus",
+    "Daha az gereksiz hareket, daha net progresyon. A → B → Dinlen döngüsünü koruyoruz.":"Fewer unnecessary exercises, clearer progression. Keep the A → B → Rest cycle.",
+    "Program, mevcut ekipmanına ve hedefin olan üst vücut/V-taper gelişimine göre düzenlendi. Bacaklar tamamen atlanmıyor ama programın odağı da değil.":"The program is built around your available equipment and upper-body/V-taper goal. Legs are not skipped completely, but they are not the focus.",
+    "A Günü — Göğüs + Omuz + Triceps + Karın":"Day A — Chest + Shoulders + Triceps + Abs",
+    "B Günü — Sırt + Biceps + Minimum Bacak + Ön Kol":"Day B — Back + Biceps + Minimal Legs + Forearms",
+    "HAREKET":"EXERCISE",
+    "Üst göğüs":"Upper chest","Göğüs izolasyonu":"Chest isolation","Kontrollü tempo":"Controlled tempo","Göğüs":"Chest","Yukarıdan aşağı":"High to low",
+    "Yan omuz":"Side delts","Hafif yük":"Light load","Arka omuz":"Rear delts","Arka kol":"Triceps","Uzun baş":"Long head","Karın":"Abs",
+    "Lat / sırt genişliği":"Lats / back width","40 kg ref.":"40 kg reference","Orta sırt":"Mid back","Geniş / dar dönüşümlü":"Wide / narrow alternating",
+    "Lat":"Lats","Düşük biceps katkısı":"Low biceps contribution","Biceps":"Biceps","RIR 1–2":"RIR 1–2","Kontrollü tekrar":"Controlled reps",
+    "Ön bacak":"Quads","Kalça":"Glutes","Arka bacak":"Hamstrings","Ön kol":"Forearms",
+    "35–40 kg ref.":"35–40 kg reference","40–45 kg ref.":"40–45 kg reference","12.5 kg ref.":"12.5 kg reference",
+    "Bench yaklaşık 30°. Omuzları geride tut ve ağırlığı kontrollü indir.":"Bench at about 30°. Keep your shoulders back and lower the weight under control.",
+    "10/10/10'a ulaştığında ağırlığı artır.":"Increase the weight when you reach 10/10/10.",
+    "Göğüsü sıkıştır, omuzları öne düşürme ve dönüşü kontrollü yap.":"Squeeze the chest, keep the shoulders from rolling forward, and return under control.",
+    "Amaç ağırlık göstermek değil, göğüste gerilim oluşturmak.":"The goal is chest tension, not moving the heaviest weight possible.",
+    "Kabloları yukarıdan başlatıp aşağı ve içeri getir. Gövdeyi sabit tut.":"Start the cables high and bring them down and inward. Keep your torso stable.",
+    "Hareket boyunca göğüs gerilimini koru.":"Keep tension on the chest throughout the movement.",
+    "Gövdeyi sabit tut ve kolu kontrollü yana aç. Sallanma yok.":"Keep your torso stable and raise the arm to the side under control. No swinging.",
+    "V-taper için bu hareketi ciddiye al.":"Take this exercise seriously for your V-taper.",
+    "Gövdeyi sabit tut ve kolları kontrollü aç. Hareketi arka omuzla yönet.":"Keep your torso stable and open your arms under control. Drive the movement with the rear delts.",
+    "Kablo sürekli gerilim verdiği için ağır kilo şart değil.":"Heavy weight is not necessary because the cable provides constant tension.",
+    "Dirsekleri gövdeye yakın tut ve alt pozisyonda kontrollü sık.":"Keep your elbows close to your torso and squeeze under control at the bottom.",
+    "Form bozuluyorsa ağırlık artışı erken.":"If your form breaks down, the weight increase was premature.",
+    "Dirsekleri mümkün olduğunca sabit tut ve aşağıda kontrollü esneme al.":"Keep your elbows as still as possible and get a controlled stretch at the bottom.",
+    "Önce ROM'u ve formu düzelt, sonra ağırlığı artır.":"Fix your ROM and form first, then increase the weight.",
+    "Hareketi karın kaslarınla başlat. Kalçayı sallama ve gövdeyi kontrol et.":"Initiate the movement with your abs. Do not swing your hips; keep your torso controlled.",
+    "Tam ROM kullan; tekrarları kontrollü yap ve ağırlığı form bozulmadan artır.":"Use a full ROM; perform controlled reps and increase the weight only while form stays clean.",
+    "Barı üst göğse doğru çek. Gövdeyi geriye savurup tekrar çalma.":"Pull the bar toward your upper chest. Do not swing your torso backward to cheat the rep.",
+    "Dirsekleri aşağı ve arkaya sür.":"Drive your elbows down and back.",
+    "Göğsü sabit tut ve dirsekleri kontrollü geriye çek. Tek kol versiyonu yok.":"Keep your chest stable and pull your elbows back under control. No single-arm version.",
+    "B1 geniş tutuş, B2 dar/neutral tutuş şeklinde dönüşümlü kullan.":"Alternate B1 with a wide grip and B2 with a narrow/neutral grip.",
+    "Kolları büyük ölçüde düz tutarak barı kalçaya doğru indir. Gövdeyi sabit tut.":"Keep your arms mostly straight and bring the bar down toward your hips. Keep your torso stable.",
+    "Amaç latları izole etmek; ağırlığı sallayarak çekme.":"The goal is to isolate the lats; do not swing the weight.",
+    "Bench üzerinde kolları geride bırak ve ağırlığı savurmadan kaldır.":"Let your arms hang behind you on the bench and curl without swinging.",
+    "Eksantrik kısmı kontrollü tut.":"Control the eccentric phase.",
+    "Dirsekleri ped üzerinde sabit tut ve ağırlığı tam kontrolle indirip kaldır.":"Keep your elbows fixed on the pad and lower and raise the weight with full control.",
+    "Alt pozisyonda eklemi kilitlemeden kontrollü esneme al.":"Get a controlled stretch at the bottom without locking the joint.",
+    "Arka ayağı bench'e koy. Ön bacakla kontrollü inip çık.":"Place your rear foot on the bench. Lower and rise under control using the front leg.",
+    "Bacak önceliği değil; temiz teknik ve minimum etkili hacim yeterli.":"Legs are not the priority; clean technique and minimum effective volume are enough.",
+    "Kalçayı geriye gönder; dumbbell'ları bacaklara yakın tut ve sırt pozisyonunu koru.":"Push your hips back; keep the dumbbells close to your legs and maintain your back position.",
+    "Bel pozisyonu bozuluyorsa seti bitir.":"End the set if your back position breaks down.",
+    "Bilekleri kontrollü hareket ettir. Ağırlığı savurmadan tam hareket aralığında çalış.":"Move your wrists under control. Use a full range of motion without swinging the weight.",
+    "Ön kolu hissederek çalış; ağırlığı form bozulmadan artır.":"Focus on the forearms; increase the weight only while form stays clean.",
+    "A → B → Dinlen":"A → B → Rest","Döngüyü sabit tut. Yeni split'e geçmek yerine aynı hareketlerde tekrar ve ağırlık progresyonunu takip et.":"Keep the cycle consistent. Instead of changing the split, track rep and weight progression on the same exercises.",
+    "Göğüs + Omuz + Triceps + Karın":"Chest + Shoulders + Triceps + Abs","Sırt + Biceps + Minimum Bacak + Ön Kol":"Back + Biceps + Minimal Legs + Forearms","Toparlanma":"Recovery","8 hareket":"8 exercises","A → B → Dinlen → tekrar":"A → B → Rest → repeat",
+    "Progresyon":"Progression","Çoğu sette RIR 1–2 bırak. Tekrar aralığının üst sınırına tüm setlerde ulaştığında ağırlığı artır. Örneğin 10/10/10 tamamlandığında bir sonraki ağırlığa geç.":"Leave 1–2 RIR on most sets. Increase the weight when you reach the top of the rep range on every set. For example, move to the next weight after completing 10/10/10.",
+    "BİR SONRAKİ HEDEF":"NEXT TARGET","İlerlemeli Yüklenme":"PROGRESSIVE OVERLOAD","Son kayıtlarına göre bir sonraki antrenmanda neyi hedeflemen gerektiğini gösterir.":"Shows what you should target in your next workout based on your latest records.",
+    "İlk kaydı oluştur":"Create first record","S1":"S1","S2":"S2","S3":"S3","Tekrar":"Reps","Ağırlık (kg)":"Weight (kg)","Kaydı kaydet":"Save record","İptal":"Cancel","Kayıt kaydedildi.":"Record saved.","Henüz geçmiş yok":"No history yet",
+    "SET ARASI":"SET REST","75 sn dinlen":"75 sec rest","Durdur":"Stop","BATU // HYPERTROPHY OS • Disiplin • İstikrar • Gelişim":"BATU // HYPERTROPHY OS • Discipline • Consistency • Progress"
+  },pl:{
+    "Antrenman":"Trening","A / B — Push + Pull + minimum bacak":"A / B — Push + Pull + minimum nóg","Odak":"Cel","Daha az gereksiz hareket, daha net progresyon. A → B → Dinlen döngüsünü koruyoruz.":"Mniej zbędnych ćwiczeń, wyraźniejsza progresja. Zachowaj cykl A → B → Odpoczynek.",
+    "Program, mevcut ekipmanına ve hedefin olan üst vücut/V-taper gelişimine göre düzenlendi. Bacaklar tamamen atlanmıyor ama programın odağı da değil.":"Program jest dopasowany do Twojego sprzętu i celu rozwoju górnej części ciała/V-taper. Nogi nie są całkowicie pomijane, ale nie są priorytetem.",
+    "A Günü — Göğüs + Omuz + Triceps + Karın":"Dzień A — Klatka + Barki + Triceps + Brzuch","B Günü — Sırt + Biceps + Minimum Bacak + Ön Kol":"Dzień B — Plecy + Biceps + Minimum nóg + Przedramiona","HAREKET":"ĆWICZENIE",
+    "Üst göğüs":"Górna klatka","Göğüs izolasyonu":"Izolacja klatki","Kontrollü tempo":"Kontrolowane tempo","Göğüs":"Klatka","Yukarıdan aşağı":"Z góry w dół","Yan omuz":"Boczne aktony barków","Hafif yük":"Lekki ciężar","Arka omuz":"Tylny akton barków","Arka kol":"Triceps","Uzun baş":"Długa głowa","Karın":"Brzuch",
+    "Lat / sırt genişliği":"Laty / szerokość pleców","40 kg ref.":"40 kg odn.","Orta sırt":"Środkowa część pleców","Geniş / dar dönüşümlü":"Naprzemiennie szeroki / wąski chwyt","Lat":"Laty","Düşük biceps katkısı":"Niewielki udział bicepsa","Biceps":"Biceps","RIR 1–2":"RIR 1–2","Kontrollü tekrar":"Kontrolowane powtórzenia","Ön bacak":"Czworogłowe","Kalça":"Pośladki","Arka bacak":"Dwugłowe","Ön kol":"Przedramiona","35–40 kg ref.":"35–40 kg odn.","40–45 kg ref.":"40–45 kg odn.","12.5 kg ref.":"12,5 kg odn.",
+    "Bench yaklaşık 30°. Omuzları geride tut ve ağırlığı kontrollü indir.":"Ławka około 30°. Trzymaj barki cofnięte i opuszczaj ciężar pod kontrolą.","10/10/10'a ulaştığında ağırlığı artır.":"Zwiększ ciężar po osiągnięciu 10/10/10.","Göğüsü sıkıştır, omuzları öne düşürme ve dönüşü kontrollü yap.":"Ściśnij klatkę, nie wysuwaj barków do przodu i wracaj pod kontrolą.","Amaç ağırlık göstermek değil, göğüste gerilim oluşturmak.":"Celem jest napięcie klatki, a nie popisywanie się ciężarem.",
+    "Kabloları yukarıdan başlatıp aşağı ve içeri getir. Gövdeyi sabit tut.":"Zacznij wysoko i prowadź linki w dół oraz do środka. Stabilizuj tułów.","Hareket boyunca göğüs gerilimini koru.":"Utrzymuj napięcie klatki przez cały ruch.","Gövdeyi sabit tut ve kolu kontrollü yana aç. Sallanma yok.":"Stabilizuj tułów i unoś ramię w bok pod kontrolą. Bez bujania.","V-taper için bu hareketi ciddiye al.":"Traktuj to ćwiczenie poważnie dla V-taper.","Gövdeyi sabit tut ve kolları kontrollü aç. Hareketi arka omuzla yönet.":"Stabilizuj tułów i otwieraj ramiona pod kontrolą. Prowadź ruch tylnym aktonem barków.","Kablo sürekli gerilim verdiği için ağır kilo şart değil.":"Duży ciężar nie jest konieczny, ponieważ wyciąg zapewnia stałe napięcie.",
+    "Dirsekleri gövdeye yakın tut ve alt pozisyonda kontrollü sık.":"Trzymaj łokcie blisko tułowia i kontrolowanie dopnij ruch na dole.","Form bozuluyorsa ağırlık artışı erken.":"Jeśli technika się pogarsza, zwiększenie ciężaru było zbyt wczesne.","Dirsekleri mümkün olduğunca sabit tut ve aşağıda kontrollü esneme al.":"Trzymaj łokcie możliwie nieruchomo i uzyskaj kontrolowane rozciągnięcie na dole.","Önce ROM'u ve formu düzelt, sonra ağırlığı artır.":"Najpierw popraw ROM i technikę, potem zwiększ ciężar.","Hareketi karın kaslarınla başlat. Kalçayı sallama ve gövdeyi kontrol et.":"Rozpocznij ruch mięśniami brzucha. Nie bujaj biodrami i kontroluj tułów.","Tam ROM kullan; tekrarları kontrollü yap ve ağırlığı form bozulmadan artır.":"Używaj pełnego ROM; wykonuj kontrolowane powtórzenia i zwiększaj ciężar tylko przy zachowaniu techniki.",
+    "Barı üst göğse doğru çek. Gövdeyi geriye savurup tekrar çalma.":"Przyciągaj drążek do górnej części klatki. Nie odchylaj tułowia, aby oszukiwać powtórzenia.","Dirsekleri aşağı ve arkaya sür.":"Prowadź łokcie w dół i do tyłu.","Göğsü sabit tut ve dirsekleri kontrollü geriye çek. Tek kol versiyonu yok.":"Stabilizuj klatkę i kontrolowanie cofaj łokcie. Bez wersji jednorącz.","B1 geniş tutuş, B2 dar/neutral tutuş şeklinde dönüşümlü kullan.":"Stosuj naprzemiennie B1 z szerokim chwytem i B2 z wąskim/neutralnym chwytem.","Kolları büyük ölçüde düz tutarak barı kalçaya doğru indir. Gövdeyi sabit tut.":"Trzymaj ramiona prawie proste i opuszczaj drążek w kierunku bioder. Stabilizuj tułów.","Amaç latları izole etmek; ağırlığı sallayarak çekme.":"Celem jest izolacja latów; nie szarp ciężarem.",
+    "Bench üzerinde kolları geride bırak ve ağırlığı savurmadan kaldır.":"Pozostaw ramiona za tułowiem na ławce i uginaj bez bujania.","Eksantrik kısmı kontrollü tut.":"Kontroluj fazę ekscentryczną.","Dirsekleri ped üzerinde sabit tut ve ağırlığı tam kontrolle indirip kaldır.":"Trzymaj łokcie stabilnie na podparciu i opuszczaj oraz podnoś ciężar pod pełną kontrolą.","Alt pozisyonda eklemi kilitlemeden kontrollü esneme al.":"Uzyskaj kontrolowane rozciągnięcie na dole bez blokowania stawu.",
+    "Arka ayağı bench'e koy. Ön bacakla kontrollü inip çık.":"Oprzyj tylną stopę na ławce. Schodź i wstawaj pod kontrolą przedniej nogi.","Bacak önceliği değil; temiz teknik ve minimum etkili hacim yeterli.":"Nogi nie są priorytetem; wystarczy czysta technika i minimalna skuteczna objętość.","Kalçayı geriye gönder; dumbbell'ları bacaklara yakın tut ve sırt pozisyonunu koru.":"Cofnij biodra; trzymaj hantle blisko nóg i utrzymuj pozycję pleców.","Bel pozisyonu bozuluyorsa seti bitir.":"Zakończ serię, jeśli pozycja pleców się pogarsza.","Bilekleri kontrollü hareket ettir. Ağırlığı savurmadan tam hareket aralığında çalış.":"Poruszaj nadgarstkami pod kontrolą. Pracuj w pełnym zakresie bez bujania ciężarem.","Ön kolu hissederek çalış; ağırlığı form bozulmadan artır.":"Skup się na przedramionach; zwiększaj ciężar tylko przy zachowaniu techniki.",
+    "A → B → Dinlen":"A → B → Odpoczynek","Döngüyü sabit tut. Yeni split'e geçmek yerine aynı hareketlerde tekrar ve ağırlık progresyonunu takip et.":"Zachowaj stały cykl. Zamiast zmieniać split, śledź progresję powtórzeń i ciężaru w tych samych ćwiczeniach.","Göğüs + Omuz + Triceps + Karın":"Klatka + Barki + Triceps + Brzuch","Sırt + Biceps + Minimum Bacak + Ön Kol":"Plecy + Biceps + Minimum nóg + Przedramiona","Toparlanma":"Regeneracja","8 hareket":"8 ćwiczeń","A → B → Dinlen → tekrar":"A → B → Odpoczynek → powtórz",
+    "Progresyon":"Progresja","Çoğu sette RIR 1–2 bırak. Tekrar aralığının üst sınırına tüm setlerde ulaştığında ağırlığı artır. Örneğin 10/10/10 tamamlandığında bir sonraki ağırlığa geç.":"Zostaw 1–2 RIR w większości serii. Zwiększ ciężar, gdy we wszystkich seriach osiągniesz górną granicę zakresu. Na przykład przejdź do kolejnego ciężaru po wykonaniu 10/10/10.","BİR SONRAKİ HEDEF":"NASTĘPNY CEL","İlerlemeli Yüklenme":"PROGRESYWNE OBCIĄŻENIE","Son kayıtlarına göre bir sonraki antrenmanda neyi hedeflemen gerektiğini gösterir.":"Pokazuje, jaki cel obrać na następnym treningu na podstawie ostatnich zapisów.",
+    "İlk kaydı oluştur":"Utwórz pierwszy zapis","S1":"S1","S2":"S2","S3":"S3","Tekrar":"Powtórzenia","Ağırlık (kg)":"Ciężar (kg)","Kaydı kaydet":"Zapisz","İptal":"Anuluj","Kayıt kaydedildi.":"Zapis zapisany.","Henüz geçmiş yok":"Brak historii",
+    "SET ARASI":"PRZERWA MIĘDZY SERIAMI","75 sn dinlen":"75 s przerwy","Durdur":"Zatrzymaj","BATU // HYPERTROPHY OS • Disiplin • İstikrar • Gelişim":"BATU // HYPERTROPHY OS • Dyscyplina • Konsekwencja • Postęp"
+  }};
+
+  function applyTrainingExact(lang){
+    const root=document.getElementById("training"); if(!root) return;
+    const maps={tr:TRAINING_EXACT.tr||{},en:TRAINING_EXACT.en||{},pl:TRAINING_EXACT.pl||{}};
+    const target=maps[lang]||{};
+    const reverse=new Map();
+    Object.keys(maps).forEach(sourceLang=>{
+      Object.entries(maps[sourceLang]).forEach(([k,v])=>{
+        if(typeof v==="string" && v.trim()) reverse.set(v,k);
+      });
+    });
+    const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      if(!n.nodeValue.trim()) return;
+      const original=originals.get(n)||n.nodeValue;
+      let sourceKey=null;
+      if(Object.prototype.hasOwnProperty.call(maps.tr,original)) sourceKey=original;
+      else if(Object.prototype.hasOwnProperty.call(maps.tr,n.nodeValue)) sourceKey=n.nodeValue;
+      else if(reverse.has(n.nodeValue)) sourceKey=reverse.get(n.nodeValue);
+      else {
+        // Also handle a node that contains a translated sentence as part of a longer text.
+        for(const [k,v] of Object.entries(maps.en)){
+          if(n.nodeValue.includes(v)){ sourceKey=k; break; }
+        }
+        if(!sourceKey){
+          for(const [k,v] of Object.entries(maps.pl)){
+            if(n.nodeValue.includes(v)){ sourceKey=k; break; }
+          }
+        }
+      }
+      if(sourceKey && Object.prototype.hasOwnProperty.call(target,sourceKey)){
+        n.nodeValue=target[sourceKey];
+      }
+    });
+  }
+
+
+
+  function forceWorkoutFocusLanguage(lang){
+    const root=document.getElementById("training");
+    if(!root) return;
+    const dict={
+      tr:"Daha az gereksiz hareket, daha net progresyon. A → B → Dinlen döngüsünü koruyoruz.",
+      en:"Fewer unnecessary exercises, clearer progression. Keep the A → B → Rest cycle.",
+      pl:"Mniej zbędnych ćwiczeń, wyraźniejsza progresja. Zachowaj cykl A → B → Odpoczynek."
+    };
+    const label={tr:"Odak:",en:"Focus:",pl:"Cel:"}[lang] || "Focus:";
+    const wanted=[
+      "more less unnecessary exercise","more net progresyon",
+      "döngüsünü koruyoruz","Fewer unnecessary exercises",
+      "Mniej zbędnych ćwiczeń","Daha az gereksiz hareket"
+    ];
+    root.querySelectorAll("p").forEach(p=>{
+      const text=(p.textContent||"").trim();
+      if(wanted.some(x=>text.includes(x))){
+        p.innerHTML="<strong>"+label+"</strong> "+dict[lang];
+      }
+    });
+  }
+
+  function applyWorkoutHeaderLanguage(lang){
+    const root=document.getElementById("training");
+    if(!root) return;
+    const focusNodes=[...root.querySelectorAll("p")].filter(el=>{
+      const t=(el.textContent||"").trim();
+      return t.includes("more less unnecessary exercise") ||
+             t.includes("more net progresyon") ||
+             t.includes("döngüsünü") ||
+             t.includes("Fewer unnecessary exercises") ||
+             t.includes("Mniej zbędnych ćwiczeń");
+    });
+    const focusText={
+      tr:"Daha az gereksiz hareket, daha net progresyon. A → B → Dinlen döngüsünü koruyoruz.",
+      en:"Fewer unnecessary exercises, clearer progression. Keep the A → B → Rest cycle.",
+      pl:"Mniej zbędnych ćwiczeń, wyraźniejsza progresja. Zachowaj cykl A → B → Odpoczynek."
+    };
+    focusNodes.forEach(el=>{
+      const prefix=el.querySelector("strong");
+      if(prefix){
+        prefix.textContent = lang==="en" ? "Focus:" : lang==="pl" ? "Cel:" : "Odak:";
+        const rest=el.childNodes[el.childNodes.length-1];
+        if(rest && rest.nodeType===3){
+          rest.nodeValue=" "+focusText[lang];
+        }else{
+          el.textContent=(lang==="en"?"Focus: ":lang==="pl"?"Cel: ":"Odak: ")+focusText[lang];
+        }
+      }else{
+        el.textContent=(lang==="en"?"Focus: ":lang==="pl"?"Cel: ":"Odak: ")+focusText[lang];
+      }
+    });
+  }
+
+
+  function renderWorkoutFocus(lang){
+    const el=document.querySelector("#training .workout-focus");
+    if(!el) return;
+    const labels={tr:"Odak:",en:"Focus:",pl:"Cel:"};
+    const texts={
+      tr:"Daha az gereksiz hareket, daha net progresyon. A → B → Dinlen döngüsünü koruyoruz.",
+      en:"Fewer unnecessary exercises, clearer progression. Keep the A → B → Rest cycle.",
+      pl:"Mniej zbędnych ćwiczeń, wyraźniejsza progresja. Zachowaj cykl A → B → Odpoczynek."
+    };
+    const l=el.querySelector("[data-i18n-focus-label]");
+    const t=el.querySelector("[data-i18n-focus-text]");
+    if(l) l.textContent=labels[lang]||labels.en;
+    if(t) t.textContent=texts[lang]||texts.en;
+  }
+
   function applyLanguageToDom(lang){
     if(!["tr","en","pl"].includes(lang)) lang="tr";
     langState.current=lang;
@@ -3930,12 +4235,17 @@ function translateSubtree(root,lang){
     setActiveLanguageButton(lang);
     document.documentElement.lang=lang;
     translateSubtree(document.body,lang);translateAllUserAttributes(lang);
+    applyTrainingExact(lang);
+    applyWorkoutHeaderLanguage(lang);
+    forceWorkoutFocusLanguage(lang);
     setActiveLanguageButton(lang);
   }
 
   window.__appSetLanguage=function(lang){applyLanguageToDom(lang);};
   window.getLanguage=function(){return langState.current;};
-  window.refreshLanguage=function(){applyLanguageToDom(langState.current);translateAllUserAttributes(langState.current);};
+  window.refreshLanguage=function(){applyLanguageToDom(langState.current);translateAllUserAttributes(langState.current);applyTrainingExact(langState.current);
+    renderWorkoutFocus(langState.current);applyWorkoutHeaderLanguage(langState.current);
+    forceWorkoutFocusLanguage(langState.current);};
 
   let languageBooting=true;
   const languageObserver=new MutationObserver(mutations=>{
